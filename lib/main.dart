@@ -8,15 +8,10 @@ void main() {
   runApp(HomeScreen());
 }
 
-
 class HomeScreen extends StatefulWidget {
   @override
   _HomeScreenState createState() => _HomeScreenState();
 }
-
-
-
-
 
 class _HomeScreenState extends State<HomeScreen> {
   int _selectedIndex = 0;
@@ -45,7 +40,7 @@ class _HomeScreenState extends State<HomeScreen> {
             ),
             BottomNavigationBarItem(
               icon: Icon(Icons.add),
-              label: 'Registo de avaliações',
+              label: 'Registo de avaliação',
             ),
           ],
         ),
@@ -53,7 +48,3 @@ class _HomeScreenState extends State<HomeScreen> {
     );
   }
 }
-
-
-
-
