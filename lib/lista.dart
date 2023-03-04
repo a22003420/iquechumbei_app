@@ -57,8 +57,17 @@ class _ListaState extends State<Lista> {
     _loadDisciplinas();
   }
 
+  bool _isFirstRun = true;
+
   Future<void> _loadDisciplinas() async {
     final prefs = await SharedPreferences.getInstance();
+
+    /*if (_isFirstRun==true) { // testa se é a primeira vez que a app é executado
+      prefs.clear(); //to clear all the data
+      _isFirstRun = false;
+    }else{
+      print("Não é a primeira vez que a app é corrida");
+    }*/
     //prefs.clear(); //to clear all the data
     final keys = prefs.getKeys();
     final disciplinas = keys.map((key) {
@@ -83,13 +92,14 @@ class _ListaState extends State<Lista> {
         onTap: () {
           Navigator.of(context).push(
             MaterialPageRoute(
-              builder: (context) => Detalhes(
-                disciplina: key,
-                tipoAvaliacao: avaliacao,
-                dataHora: dataHora,
-                dificuldade: dificuldade,
-                observacoes: observacoes,
-              ),
+              builder: (context) =>
+                  Detalhes(
+                    disciplina: key,
+                    tipoAvaliacao: avaliacao,
+                    dataHora: dataHora,
+                    dificuldade: dificuldade,
+                    observacoes: observacoes,
+                  ),
             ),
           );
         },
@@ -106,9 +116,35 @@ class _ListaState extends State<Lista> {
   @override
   Widget build(BuildContext context) {
     print("Lista de disciplinas adicionadas: ${_disciplinas_added.length}");
-    return Scrollbar(
-      thumbVisibility: true,
-      child: ListView(children: _disciplinas_fixo + _disciplinas_added),
+    return Scaffold(
+      appBar: AppBar(
+        backgroundColor: Colors.blue,
+        title: Text(
+          "Listagem de avaliações",
+            style: TextStyle(
+              fontSize: 24.0, // tamanho da fonte em pontos
+              fontWeight: FontWeight.bold, // negrito
+            ),
+        ),
+      ),
+      body: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Expanded(
+            child: Scrollbar(
+              thumbVisibility: true,
+              child: ListView(
+                padding: EdgeInsets.only(top: 14.0),
+                children: _disciplinas_fixo + _disciplinas_added,
+              ),
+            ),
+          ),
+        ],
+      ),
     );
   }
 }
+
+
+
+

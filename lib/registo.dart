@@ -110,7 +110,7 @@ class _RegistoState extends State<Registo> {
                   TextFormField(
                     controller: _disciplinaController,
                     decoration: InputDecoration(
-                      labelText: 'Disciplina (ex:. LP2)',
+                      labelText: 'Nome da disciplina (ex:. LP2)',
                     ),
                     validator: (value) {
                       if (value!.isEmpty) {
@@ -124,7 +124,7 @@ class _RegistoState extends State<Registo> {
                     controller: _avaliacaoController,
                     decoration: InputDecoration(
                       labelText:
-                          'Avaliação (ex:. frequencia, mini-teste, projeto ou defesa)',
+                          'Tipo de avaliação (ex:. frequencia, mini-teste, projeto ou defesa)',
                     ),
                     keyboardType: TextInputType.text,
                     validator: (value) {
@@ -148,7 +148,7 @@ class _RegistoState extends State<Registo> {
                   TextFormField(
                     controller: _dataHoraController,
                     decoration: InputDecoration(
-                      labelText: 'Data e Hora (ex:. 2023/01/31 14:30)',
+                      labelText: 'Data e hora da realização (ex formato:. 2023/01/31 14:30)',
                     ),
                     onTap: () async {
                       DateTime? pickedDate = await showDatePicker(
@@ -170,34 +170,60 @@ class _RegistoState extends State<Registo> {
                             pickedTime.hour,
                             pickedTime.minute,
                           );
-                          String formattedDate =
-                              "${pickedDateTime.year}/${pickedDateTime.month}/${pickedDateTime.day} ${pickedDateTime.hour}:${pickedDateTime.minute}";
-                          _dataHoraController.text = formattedDate;
+
+                          // data e hora igual ou posterior à atual - Validação
+                          if (pickedDateTime.isAtSameMomentAs(DateTime.now()) || pickedDateTime.isAfter(DateTime.now())) {
+                            String formattedDate =
+                                "${pickedDateTime.year}/${pickedDateTime.month}/${pickedDateTime.day} ${pickedDateTime.hour}:${pickedDateTime.minute}";
+                            _dataHoraController.text = formattedDate;
+                          } else {
+                            showDialog(
+                              context: context,
+                              builder: (BuildContext context) {
+                                return AlertDialog(
+                                  title: Text('Data e hora inválidas'),
+                                  content: Text('Seleccione uma data e hora posterior ou igual à atual.'),
+                                  actions: [
+                                    TextButton(
+                                      onPressed: () => Navigator.pop(context),
+                                      child: Text('OK'),
+                                    ),
+                                  ],
+                                );
+                              },
+                            );
+                          }
                         }
                       }
                     },
                     validator: (value) {
                       if (value!.isEmpty) {
-                        return 'Falta colocar a Data e Hora correcta';
+                        return 'Falta colocar a Data e Hora da realização da avaliação';
                       }
                       return null;
                     },
                   ),
+
                   SizedBox(height: 16),
                   TextFormField(
                     controller: _dificuldadeController,
                     decoration: InputDecoration(
-                      labelText: 'Dificuldade (Entre 1 e 5)',
+                      labelText: ' Nível de dificuldade esperado pelo aluno (Entre 1 e 5)',
                     ),
                     keyboardType: TextInputType.number,
                     validator: (value) {
-                      if (value!.isEmpty) {
-                        return 'Falta preencher correctamente';
+                      if (value == null || value.isEmpty) {
+                        return 'Falta colocar o nível de dificuldade esperado';
                       }
+
+                      if (int.tryParse(value) == null) {
+                        return 'Por favor, insira um número válido';
+                      }
+
                       List<int> dificuldadeRange = [1, 2, 3, 4, 5];
 
                       if (!dificuldadeRange.contains(int.parse(value))) {
-                        return 'Dificuldade inválida. Por favor, seleccione um valor entre 1 e 5';
+                        return 'Dificuldade inválida. Por favor, insira um valor entre 1 e 5';
                       }
 
                       return null;
