@@ -5,9 +5,12 @@ import 'lista.dart';
 import 'package:intl/intl.dart';
 
 class Registo extends StatefulWidget {
+
   @override
   _RegistoState createState() => _RegistoState();
 }
+
+
 
 class _RegistoState extends State<Registo> {
   final _formKey = GlobalKey<FormState>();
@@ -23,6 +26,7 @@ class _RegistoState extends State<Registo> {
   void initState() {
     super.initState();
     _recuperarRegistos();
+
   }
 
   Future<void> _guardarRegisto() async {

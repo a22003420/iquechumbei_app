@@ -1,7 +1,10 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:iquechumbei_app/registo.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'listadetalhes.dart';
+import 'registo.dart';
+
 
 class Lista extends StatefulWidget {
   @override
@@ -20,7 +23,7 @@ class _ListaState extends State<Lista> {
         children: const [
           Text('Nível de dificuldade: 3'),
           Text('Tipo de Avaliação: mini-teste'),
-          Text('Data e hora da realização: 2021/02/20 12:30'),
+          Text('Data da Realização: 2021/02/20 12:30'),
           Text('Observações: Gostei muito da disciplina.'),
         ],
       ),
@@ -32,7 +35,7 @@ class _ListaState extends State<Lista> {
         children: const [
           Text('Nível de dificuldade: 4'),
           Text('Tipo de Avaliação: frequência'),
-          Text('Data e hora da realização: 2021/03/20 13:30'),
+          Text('Data da Realização: 2021/03/20 13:30'),
           Text('Observações: Gostei muito da disciplina.'),
         ],
       ),
@@ -44,7 +47,7 @@ class _ListaState extends State<Lista> {
         children: const [
           Text('Nível de dificuldade: 3'),
           Text('Tipo de Avaliação: defesa'),
-          Text('Data e hora da realização: 2021/06/20 14:30'),
+          Text('Data da Realização: 2021/06/20 14:30'),
           Text('Observações: Gostei muito da disciplina.'),
         ],
       ),
@@ -85,10 +88,60 @@ class _ListaState extends State<Lista> {
           children: [
             Text('Nível de dificuldade: $dificuldade'),
             Text('Tipo de Avaliação: $avaliacao'),
-            Text('Data e hora da realização: $dataHora'),
+            Text('Data da Realização: $dataHora'),
             Text('Observações: $observacoes'),
           ],
         ),
+        trailing: Row(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            IconButton(
+              icon: Icon(Icons.delete),
+              onPressed: () => showDialog(
+                context: context,
+                builder: (context) => AlertDialog(
+                  title: Text('Eliminar disciplina'),
+                  content: Text('Tem certeza que quer eliminar esta disciplina?'),
+                  actions: [
+                    TextButton(
+                      child: Text('Cancelar'),
+                      onPressed: () => Navigator.of(context).pop(),
+                    ),
+                    TextButton(
+                      child: Text('Excluir'),
+                      onPressed: () {
+                        _eliminarDisciplina(key);
+                        Navigator.of(context).pop();
+                      },
+                    ),
+                  ],
+                ),
+              ),
+            ),
+            IconButton(
+              icon: Icon(Icons.edit),
+              onPressed: () {
+                Navigator.of(context).push(
+                  MaterialPageRoute(
+                    builder: (context) =>
+                        Detalhes( //HERE IS THE PROBLEM
+                          disciplina: key,
+                          tipoAvaliacao: avaliacao,
+                          dataHora: dataHora,
+                          dificuldade: dificuldade,
+                          observacoes: observacoes,
+                        ),
+                  ),
+                );
+              },
+            ),
+
+
+          ],
+        ),
+
+
+
         onTap: () {
           Navigator.of(context).push(
             MaterialPageRoute(
@@ -128,9 +181,75 @@ class _ListaState extends State<Lista> {
     });
   }
 
+
+
+
+  int _disciplinasEliminadas = 0; //
+
+  void _eliminarDisciplina(String disciplina) async {
+    final prefs = await SharedPreferences.getInstance();
+    await prefs.remove(disciplina);
+    await _loadDisciplinas();
+    _disciplinasEliminadas++;
+    print('Total de disciplinas removidas: $_disciplinasEliminadas');
+    showDialog(
+      context: context,
+      builder: (BuildContext context) {
+        return AlertDialog(
+          title: Text('O registo de avaliação selecionado foi eliminado '
+              'com sucesso.'),
+          actions: <Widget>[
+            TextButton(
+              child: Text('OK'),
+              onPressed: () {
+                Navigator.of(context).pop();
+              },
+            ),
+          ],
+        );
+      },
+    );
+  }
+
+  int _disciplinasEditadas = 0; //
+
+  Future<void> _editarDisciplina(String key, String avaliacao, String dataHora,
+      String dificuldade, String observacoes) async {
+    final prefs = await SharedPreferences.getInstance();
+    final values = [avaliacao, dataHora, dificuldade, observacoes];
+    await prefs.setStringList(key, values);
+    setState(() {
+      _loadDisciplinas();
+    });
+    _disciplinasEditadas++;
+    print('Total de disciplinas editadas: $_disciplinasEliminadas');
+    showDialog(
+      context: context,
+      builder: (BuildContext context) {
+        return AlertDialog(
+          title: Text('O registo de avaliação selecionado foi editado'
+              ' com sucesso.'),
+          actions: <Widget>[
+            TextButton(
+              child: Text('OK'),
+              onPressed: () {
+                Navigator.of(context).pop();
+              },
+            ),
+          ],
+        );
+      },
+    );
+  }
+
+
+
+
+
+
   @override
   Widget build(BuildContext context) {
-    print("Lista de disciplinas adicionadas: ${_disciplinas_added.length}");
+    print("Total de disciplinas adicionadas: ${_disciplinas_added.length}");
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.blue,
