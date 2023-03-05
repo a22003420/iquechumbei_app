@@ -1,10 +1,17 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 import 'dashboard.dart';
 import 'lista.dart';
 import 'registo.dart';
 
-void main() {
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+
+  // limpa dados das shared preferences
+  final prefs = await SharedPreferences.getInstance();
+  prefs.clear(); //to clear all the data
+
   runApp(HomeScreen());
 }
 

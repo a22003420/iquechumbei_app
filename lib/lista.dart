@@ -68,7 +68,7 @@ class _ListaState extends State<Lista> {
     }else{
       print("Não é a primeira vez que a app é corrida");
     }*/
-    //prefs.clear(); //to clear all the data
+    //prefs.clear(); //to clear all the data | Coloquei no main para abrir sempre limpo
     final keys = prefs.getKeys();
     final disciplinas = keys.map((key) {
       final value = prefs.get(key);
@@ -106,7 +106,22 @@ class _ListaState extends State<Lista> {
       );
     }).toList();
 
-    //sort the list dataHora
+    //set sort list by dataHora
+    // set sort list by dataHora
+    disciplinas.sort((a, b) {
+      final aChildren = (a.subtitle as Column)?.children;
+      final bChildren = (b.subtitle as Column)?.children;
+      final aDataHora = aChildren != null && aChildren.length > 2 ? aChildren[2] : null;
+      final bDataHora = bChildren != null && bChildren.length > 2 ? bChildren[2] : null;
+      if (aDataHora != null && bDataHora != null) {
+        return aDataHora.toString().compareTo(bDataHora.toString());
+      } else {
+        return 0;
+      }
+    });
+
+
+
 
     setState(() {
       _disciplinas_added = disciplinas;
@@ -121,10 +136,10 @@ class _ListaState extends State<Lista> {
         backgroundColor: Colors.blue,
         title: Text(
           "Listagem de avaliações",
-            style: TextStyle(
-              fontSize: 24.0, // tamanho da fonte em pontos
-              fontWeight: FontWeight.bold, // negrito
-            ),
+          style: TextStyle(
+            fontSize: 24.0, // tamanho da fonte em pontos
+            fontWeight: FontWeight.bold, // negrito
+          ),
         ),
       ),
       body: Column(
@@ -144,7 +159,3 @@ class _ListaState extends State<Lista> {
     );
   }
 }
-
-
-
-
