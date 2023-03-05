@@ -38,6 +38,8 @@ class Detalhes extends StatelessWidget {
             Text('Tipo de Avaliação: $tipoAvaliacao'),
             const SizedBox(height: 8),
             Text('Data e hora da realização: $dataHora'),
+            const SizedBox(height: 8),
+            Text('Observações: $observacoes'),
 
           ],
         ),
