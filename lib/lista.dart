@@ -57,7 +57,7 @@ class _ListaState extends State<Lista> {
     _loadDisciplinas();
   }
 
-  bool _isFirstRun = true;
+  // bool _isFirstRun = true;
 
   Future<void> _loadDisciplinas() async {
     final prefs = await SharedPreferences.getInstance();
