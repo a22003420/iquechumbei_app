@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'lista.dart';
+import 'package:intl/intl.dart';
 
 class Registo extends StatefulWidget {
   @override
@@ -173,8 +174,7 @@ class _RegistoState extends State<Registo> {
 
                           // data e hora igual ou posterior à atual - Validação
                           if (pickedDateTime.isAtSameMomentAs(DateTime.now()) || pickedDateTime.isAfter(DateTime.now())) {
-                            String formattedDate =
-                                "${pickedDateTime.year}/${pickedDateTime.month}/${pickedDateTime.day} ${pickedDateTime.hour}:${pickedDateTime.minute}";
+                            String formattedDate = DateFormat('yyyy/MM/dd HH:mm').format(pickedDateTime);
                             _dataHoraController.text = formattedDate;
                           } else {
                             showDialog(

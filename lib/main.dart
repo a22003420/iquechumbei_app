@@ -22,6 +22,7 @@ class HomeScreen extends StatefulWidget {
 
 class _HomeScreenState extends State<HomeScreen> {
   int _selectedIndex = 0;
+  bool _isDarkMode = false; // adicionado para controlar o modo de luz/noturno
   final List<Widget> _screens = [
     Dashboard(),
     Lista(),
