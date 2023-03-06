@@ -5,12 +5,9 @@ import 'lista.dart';
 import 'package:intl/intl.dart';
 
 class Registo extends StatefulWidget {
-
   @override
   _RegistoState createState() => _RegistoState();
 }
-
-
 
 class _RegistoState extends State<Registo> {
   final _formKey = GlobalKey<FormState>();
@@ -26,7 +23,6 @@ class _RegistoState extends State<Registo> {
   void initState() {
     super.initState();
     _recuperarRegistos();
-
   }
 
   Future<void> _guardarRegisto() async {
@@ -153,7 +149,8 @@ class _RegistoState extends State<Registo> {
                   TextFormField(
                     controller: _dataHoraController,
                     decoration: InputDecoration(
-                      labelText: 'Data e hora da realização (ex formato:. 2023/01/31 14:30)',
+                      labelText:
+                          'Data e hora da realização (ex formato:. 2023/01/31 14:30)',
                     ),
                     onTap: () async {
                       DateTime? pickedDate = await showDatePicker(
@@ -177,8 +174,11 @@ class _RegistoState extends State<Registo> {
                           );
 
                           // data e hora igual ou posterior à atual - Validação
-                          if (pickedDateTime.isAtSameMomentAs(DateTime.now()) || pickedDateTime.isAfter(DateTime.now())) {
-                            String formattedDate = DateFormat('yyyy/MM/dd HH:mm').format(pickedDateTime);
+                          if (pickedDateTime.isAtSameMomentAs(DateTime.now()) ||
+                              pickedDateTime.isAfter(DateTime.now())) {
+                            String formattedDate =
+                                DateFormat('yyyy/MM/dd HH:mm')
+                                    .format(pickedDateTime);
                             _dataHoraController.text = formattedDate;
                           } else {
                             showDialog(
@@ -186,7 +186,8 @@ class _RegistoState extends State<Registo> {
                               builder: (BuildContext context) {
                                 return AlertDialog(
                                   title: Text('Data e hora inválidas'),
-                                  content: Text('Seleccione uma data e hora posterior ou igual à atual.'),
+                                  content: Text(
+                                      'Seleccione uma data e hora posterior ou igual à atual.'),
                                   actions: [
                                     TextButton(
                                       onPressed: () => Navigator.pop(context),
@@ -207,12 +208,12 @@ class _RegistoState extends State<Registo> {
                       return null;
                     },
                   ),
-
                   SizedBox(height: 16),
                   TextFormField(
                     controller: _dificuldadeController,
                     decoration: InputDecoration(
-                      labelText: ' Nível de dificuldade esperado pelo aluno (Entre 1 e 5)',
+                      labelText:
+                          ' Nível de dificuldade esperado pelo aluno (Entre 1 e 5)',
                     ),
                     keyboardType: TextInputType.number,
                     validator: (value) {

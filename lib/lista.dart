@@ -1,10 +1,9 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:iquechumbei_app/registo.dart';
+import 'package:flutter_slidable/flutter_slidable.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'listadetalhes.dart';
 import 'registo.dart';
-
 
 class Lista extends StatefulWidget {
   @override
@@ -97,7 +96,8 @@ class _ListaState extends State<Lista> {
                 context: context,
                 builder: (context) => AlertDialog(
                   title: Text('Eliminar disciplina'),
-                  content: Text('Tem certeza que quer eliminar esta disciplina?'),
+                  content:
+                      Text('Tem certeza que quer eliminar esta disciplina?'),
                   actions: [
                     TextButton(
                       child: Text('Cancelar'),
@@ -119,36 +119,30 @@ class _ListaState extends State<Lista> {
               onPressed: () {
                 Navigator.of(context).push(
                   MaterialPageRoute(
-                    builder: (context) =>
-                        Detalhes( //HERE IS THE PROBLEM
-                          disciplina: key,
-                          tipoAvaliacao: avaliacao,
-                          dataHora: dataHora,
-                          dificuldade: dificuldade,
-                          observacoes: observacoes,
-                        ),
+                    builder: (context) => Detalhes(
+                      //HERE IS THE PROBLEM
+                      disciplina: key,
+                      tipoAvaliacao: avaliacao,
+                      dataHora: dataHora,
+                      dificuldade: dificuldade,
+                      observacoes: observacoes,
+                    ),
                   ),
                 );
               },
             ),
-
-
           ],
         ),
-
-
-
         onTap: () {
           Navigator.of(context).push(
             MaterialPageRoute(
-              builder: (context) =>
-                  Detalhes(
-                    disciplina: key,
-                    tipoAvaliacao: avaliacao,
-                    dataHora: dataHora,
-                    dificuldade: dificuldade,
-                    observacoes: observacoes,
-                  ),
+              builder: (context) => Detalhes(
+                disciplina: key,
+                tipoAvaliacao: avaliacao,
+                dataHora: dataHora,
+                dificuldade: dificuldade,
+                observacoes: observacoes,
+              ),
             ),
           );
         },
@@ -160,8 +154,10 @@ class _ListaState extends State<Lista> {
     disciplinas.sort((a, b) {
       final aChildren = (a.subtitle as Column)?.children;
       final bChildren = (b.subtitle as Column)?.children;
-      final aDataHora = aChildren != null && aChildren.length > 2 ? aChildren[2] : null;
-      final bDataHora = bChildren != null && bChildren.length > 2 ? bChildren[2] : null;
+      final aDataHora =
+          aChildren != null && aChildren.length > 2 ? aChildren[2] : null;
+      final bDataHora =
+          bChildren != null && bChildren.length > 2 ? bChildren[2] : null;
       if (aDataHora != null && bDataHora != null) {
         return aDataHora.toString().compareTo(bDataHora.toString());
       } else {
@@ -169,16 +165,10 @@ class _ListaState extends State<Lista> {
       }
     });
 
-
-
-
     setState(() {
       _disciplinas_added = disciplinas;
     });
   }
-
-
-
 
   int _disciplinasEliminadas = 0; //
 
@@ -237,11 +227,6 @@ class _ListaState extends State<Lista> {
       },
     );
   }
-
-
-
-
-
 
   @override
   Widget build(BuildContext context) {
