@@ -34,6 +34,7 @@ dependencies:
   shared_preferences: ^2.0.12
   url_launcher: ^6.0.3
   mockito: ^5.1.1
+  share: ^2.0.4
   flutter:
     sdk: flutter
 

@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:url_launcher/url_launcher.dart';
-import 'package:url_launcher/url_launcher_string.dart';
+import 'package:share/share.dart';
 
 class Detalhes extends StatefulWidget {
   final String disciplina;
@@ -20,10 +19,10 @@ class Detalhes extends StatefulWidget {
   }) : super(key: key);
 
   @override
-  _DetalhesState createState() => _DetalhesState();
+  DetalhesState createState() => DetalhesState();
 }
 
-class _DetalhesState extends State<Detalhes> {
+class DetalhesState extends State<Detalhes> {
   late String textToShare;
 
   @override
@@ -63,13 +62,12 @@ class _DetalhesState extends State<Detalhes> {
               margin: EdgeInsets.only(top: 16.0),
               child: Center(
                 child: ElevatedButton(
-                  onPressed: () {
+                  onPressed: (){
                     // Copy text
                     Clipboard.setData(ClipboardData(text: textToShare));
 
-                    // Abrir aplicações
-                    final url = 'sms:?body=$textToShare';
-                    launchUrlString(url);
+                    // Abrir as aplicações to share
+                    Share.share(textToShare);
                   },
                   style: ElevatedButton.styleFrom(
                     backgroundColor: Colors.lightBlue,
