@@ -7,13 +7,13 @@ void main() {
   group('Detalhes', () {
     testWidgets('Verifica se o texto a ser compartilhado é gerado corretamente',
             (WidgetTester tester) async {
-          // cria a widget de Detalhes
+          // cria o widget de Detalhes
           final widget = MaterialApp(home: Detalhes(
-              disciplina: 'Matemática',
-              tipoAvaliacao: 'Prova',
-              dataHora: '01/01/2023 14:00',
+              disciplina: 'LP2',
+              tipoAvaliacao: 'mini-teste',
+              dataHora: '06/03/2023 02:00',
               dificuldade: '3',
-              observacoes: 'Estudar funções trigonométricas'
+              observacoes: 'Vai ser tarefa dificil'
           ));
 
           // renderiza o widget
@@ -23,7 +23,10 @@ void main() {
           final state = tester.state(find.byType(Detalhes)) as DetalhesState;
 
           // verifica se o texto gerado é igual ao esperado (Mensagem do Dealer)
-          expect(state.textToShare, 'Mensagem do Dealer!!\n\nVamos ter avaliação de Matemática, em 01/01/2023 14:00, com a dificuldade de 3 numa escala de 1 a 5.\nObservações para esta avaliação:\nEstudar funções trigonométricas');
+          expect(state.textToShare, 'Mensagem do Dealer!!\n\nVamos ter'
+              ' avaliação de LP2, em 06/03/2023 02:00, com a dificuldade de '
+              '3 numa escala de 1 a 5.\nObservações para esta avaliação:\n'
+              'Vai ser tarefa dificil');
         });
   });
 }
