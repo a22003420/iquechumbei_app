@@ -1,34 +1,29 @@
+import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:iquechumbei_app/registo.dart';
+import 'package:iquechumbei_app/listadetalhes.dart';
+
 
 void main() {
-  testWidgets('Teste de Registo', (WidgetTester tester) async {
-    // Build our app and trigger a frame.
-    await tester.pumpWidget(Registo());
+  group('Detalhes', () {
+    testWidgets('Verifica se o texto a ser compartilhado é gerado corretamente',
+            (WidgetTester tester) async {
+          // cria a widget de Detalhes
+          final widget = MaterialApp(home: Detalhes(
+              disciplina: 'Matemática',
+              tipoAvaliacao: 'Prova',
+              dataHora: '01/01/2023 14:00',
+              dificuldade: '3',
+              observacoes: 'Estudar funções trigonométricas'
+          ));
 
-    // Verify that our counter starts at 0.
-    expect(find.text('Registo de avaliação'), findsOneWidget);
-    expect(find.text('Disciplina'), findsOneWidget);
-    expect(find.text('Nível de dificuldade'), findsOneWidget);
-    expect(find.text('Tipo de avaliação'), findsOneWidget);
-    expect(find.text('Data da realização'), findsOneWidget);
-    expect(find.text('Guardar'), findsOneWidget);
-    expect(find.text('Cancelar'), findsOneWidget);
+          // renderiza o widget
+          await tester.pumpWidget(widget);
 
-    // Tap the '+' icon and trigger a frame.
-    await tester.tap(find.text('Guardar'));
-    await tester.pump();
+          // obtém a instância do state
+          final state = tester.state(find.byType(Detalhes)) as DetalhesState;
 
-    // Verify that our counter has incremented.
-    expect(find.text('Registo de avaliação'), findsOneWidget);
-    expect(find.text('Disciplina'), findsOneWidget);
-    expect(find.text('Nível de dificuldade'), findsOneWidget);
-    expect(find.text('Tipo de avaliação'), findsOneWidget);
-    expect(find.text('Data da realização'), findsOneWidget);
-    expect(find.text('Guardar'), findsOneWidget);
-    expect(find.text('Cancelar'), findsOneWidget);
+          // verifica se o texto gerado é igual ao esperado (Mensagem do Dealer)
+          expect(state.textToShare, 'Mensagem do Dealer!!\n\nVamos ter avaliação de Matemática, em 01/01/2023 14:00, com a dificuldade de 3 numa escala de 1 a 5.\nObservações para esta avaliação:\nEstudar funções trigonométricas');
+        });
   });
-
-
-
-  }
+}

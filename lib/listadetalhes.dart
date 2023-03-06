@@ -63,9 +63,6 @@ class DetalhesState extends State<Detalhes> {
               child: Center(
                 child: ElevatedButton(
                   onPressed: (){
-                    // Copy text
-                    Clipboard.setData(ClipboardData(text: textToShare));
-
                     // Abrir as aplicações to share
                     Share.share(textToShare);
                   },

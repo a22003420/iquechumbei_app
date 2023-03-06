@@ -1,14 +1,13 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_slidable/flutter_slidable.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'listadetalhes.dart';
-import 'registo.dart';
 
 class Lista extends StatefulWidget {
   @override
   _ListaState createState() => _ListaState();
 }
+
 
 class _ListaState extends State<Lista> {
   List<Widget> _disciplinas_added = []; // carregadas pelo user
@@ -97,7 +96,7 @@ class _ListaState extends State<Lista> {
                 builder: (context) => AlertDialog(
                   title: Text('Eliminar disciplina'),
                   content:
-                      Text('Tem certeza que quer eliminar esta disciplina?'),
+                  Text('Tem certeza que quer eliminar esta disciplina?'),
                   actions: [
                     TextButton(
                       child: Text('Cancelar'),
@@ -155,9 +154,9 @@ class _ListaState extends State<Lista> {
       final aChildren = (a.subtitle as Column)?.children;
       final bChildren = (b.subtitle as Column)?.children;
       final aDataHora =
-          aChildren != null && aChildren.length > 2 ? aChildren[2] : null;
+      aChildren != null && aChildren.length > 2 ? aChildren[2] : null;
       final bDataHora =
-          bChildren != null && bChildren.length > 2 ? bChildren[2] : null;
+      bChildren != null && bChildren.length > 2 ? bChildren[2] : null;
       if (aDataHora != null && bDataHora != null) {
         return aDataHora.toString().compareTo(bDataHora.toString());
       } else {
