@@ -3,32 +3,33 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:iquechumbei_app/listadetalhes.dart';
 import 'package:iquechumbei_app/registo.dart';
 
-
 void main() {
   group('Detalhes', () {
     testWidgets('Verifica se o texto a ser compartilhado é gerado corretamente',
-            (WidgetTester tester) async {
-          // cria o widget de Detalhes
-          final widget = MaterialApp(home: Detalhes(
+        (WidgetTester tester) async {
+      // cria o widget de Detalhes
+      final widget = MaterialApp(
+          home: Detalhes(
               disciplina: 'LP2',
               tipoAvaliacao: 'mini-teste',
               dataHora: '06/03/2023 02:00',
               dificuldade: '3',
-              observacoes: 'Vai ser tarefa dificil'
-          ));
+              observacoes: 'Vai ser tarefa dificil'));
 
-          // renderiza o widget
-          await tester.pumpWidget(widget);
+      // renderiza o widget
+      await tester.pumpWidget(widget);
 
-          // obtém a instância do state
-          final state = tester.state(find.byType(Detalhes)) as DetalhesState;
+      // obtém a instância do state
+      final state = tester.state(find.byType(Detalhes)) as DetalhesState;
 
-          // verifica se o texto gerado é igual ao esperado (Mensagem do Dealer)
-          expect(state.textToShare, 'Mensagem do Dealer!!\n\nVamos ter'
-              ' avaliação de LP2, em 06/03/2023 02:00, com a dificuldade de '
-              '3 numa escala de 1 a 5.\nObservações para esta avaliação:\n'
-              'Vai ser tarefa dificil');
-        });
+      // verifica se o texto gerado é igual ao esperado (Mensagem do Dealer)
+      expect(
+          state.textToShare,
+          'Mensagem do Dealer!!\n\nVamos ter'
+          ' avaliação de LP2, em 06/03/2023 02:00, com a dificuldade de '
+          '3 numa escala de 1 a 5.\nObservações para esta avaliação:\n'
+          'Vai ser tarefa dificil');
+    });
   });
 
   test('Validação do TextFormField', () {
@@ -47,8 +48,10 @@ void main() {
     // Verifica se as mensagens de erro esperadas são retornadas
     expect(find.text('Faltar colocar o nome da disciplina'), findsOneWidget);
     expect(find.text('Falta colocar o tipo de avaliação'), findsOneWidget);
-    expect(find.text('Falta colocar a Data e Hora da realização da avaliação'), findsOneWidget);
-    expect(find.text('Falta colocar o nível de dificuldade esperado'), findsOneWidget);
+    expect(find.text('Falta colocar a Data e Hora da realização da avaliação'),
+        findsOneWidget);
+    expect(find.text('Falta colocar o nível de dificuldade esperado'),
+        findsOneWidget);
   });
 
   testWidgets('DatePicker e TimePicker', (WidgetTester tester) async {
@@ -99,7 +102,8 @@ void main() {
     expect(form.currentState!.validate(), isTrue);
   });
 
-  test('Quando o valor do campo está vazio, deve retornar uma mensagem de erro', () {
+  test('Quando o valor do campo está vazio, deve retornar uma mensagem de erro',
+      () {
     // Arrange
     final controller = TextEditingController();
     final validator = (value) {
@@ -123,7 +127,9 @@ void main() {
     expect(result, 'Falta colocar o tipo de avaliação');
   });
 
-  test('Quando um valor inválido é inserido, deve retornar uma mensagem de erro', () {
+  test(
+      'Quando um valor inválido é inserido, deve retornar uma mensagem de erro',
+      () {
     // Arrange
     final controller = TextEditingController(text: 'avaliacao_invalida');
     final validator = (value) {
@@ -170,7 +176,4 @@ void main() {
     // Assert
     expect(result, null);
   });
-
-
-
 }

@@ -3,17 +3,17 @@ import 'package:flutter/material.dart';
 import 'package:flutter_slidable/flutter_slidable.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'listadetalhes.dart';
+import 'registo.dart';
 
 class Lista extends StatefulWidget {
   @override
   _ListaState createState() => _ListaState();
 }
 
-
 class _ListaState extends State<Lista> {
   List<Widget> _disciplinas_added = []; // carregadas pelo user
 
-  final List<Widget> _disciplinas_fixo = [
+  /* final List<Widget> _disciplinas_fixo = [
     // pre carregadas
     ListTile(
       title: const Text('IHM'),
@@ -48,7 +48,7 @@ class _ListaState extends State<Lista> {
         ],
       ),
     ),
-  ];
+  ]; */
 
   @override
   void initState() {
@@ -84,7 +84,7 @@ class _ListaState extends State<Lista> {
           children: [
             Text('Nível de dificuldade: $dificuldade'),
             Text('Tipo de Avaliação: $avaliacao'),
-            Text('Data da Realização: $dataHora'),
+            Text('Data e Hora: $dataHora'),
           ],
         ),
         trailing: Row(
@@ -97,7 +97,7 @@ class _ListaState extends State<Lista> {
                 builder: (context) => AlertDialog(
                   title: Text('Eliminar disciplina'),
                   content:
-                  Text('Tem certeza que quer eliminar esta disciplina?'),
+                      Text('Tem certeza que quer eliminar esta disciplina?'),
                   actions: [
                     TextButton(
                       child: Text('Cancelar'),
@@ -116,20 +116,12 @@ class _ListaState extends State<Lista> {
             ),
             IconButton(
               icon: Icon(Icons.edit),
-              onPressed: () {
-                Navigator.of(context).push(
-                  MaterialPageRoute(
-                    builder: (context) => Detalhes(
-                      //HERE IS THE PROBLEM
-                      disciplina: key,
-                      tipoAvaliacao: avaliacao,
-                      dataHora: dataHora,
-                      dificuldade: dificuldade,
-                      observacoes: observacoes,
-                    ),
-                  ),
-                );
-              },
+              onPressed: () => Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => Registo(),
+                ),
+              ),
             ),
           ],
         ),
@@ -155,9 +147,9 @@ class _ListaState extends State<Lista> {
       final aChildren = (a.subtitle as Column)?.children;
       final bChildren = (b.subtitle as Column)?.children;
       final aDataHora =
-      aChildren != null && aChildren.length > 2 ? aChildren[2] : null;
+          aChildren != null && aChildren.length > 2 ? aChildren[2] : null;
       final bDataHora =
-      bChildren != null && bChildren.length > 2 ? bChildren[2] : null;
+          bChildren != null && bChildren.length > 2 ? bChildren[2] : null;
       if (aDataHora != null && bDataHora != null) {
         return aDataHora.toString().compareTo(bDataHora.toString());
       } else {
@@ -168,7 +160,6 @@ class _ListaState extends State<Lista> {
     setState(() {
       _disciplinas_added = disciplinas;
     });
-
   }
 
   int _disciplinasEliminadas = 0; //
@@ -281,7 +272,8 @@ class _ListaState extends State<Lista> {
                       vertical: 8.0,
                       horizontal: 16.0,
                     ),
-                    children: _disciplinas_fixo + _disciplinas_added,
+                    children: _disciplinas_added,
+                    //children: _disciplinas_fixo + _disciplinas_added,
                   ),
                 ),
               ),
@@ -291,6 +283,4 @@ class _ListaState extends State<Lista> {
       ),
     );
   }
-
-
 }

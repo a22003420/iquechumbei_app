@@ -162,8 +162,7 @@ class _RegistoState extends State<Registo> {
                       TextFormField(
                         controller: _dataHoraController,
                         decoration: InputDecoration(
-                          labelText:
-                              'Data e hora da realização',
+                          labelText: 'Data e hora da realização',
                           border: OutlineInputBorder(),
                         ),
                         onTap: () async {
@@ -230,8 +229,8 @@ class _RegistoState extends State<Registo> {
                         decoration: InputDecoration(
                           labelText:
                               ' Nível de dificuldade esperado pelo aluno (Entre 1 e 5)',
-                        border: OutlineInputBorder(),
-                      ),
+                          border: OutlineInputBorder(),
+                        ),
                         keyboardType: TextInputType.number,
                         validator: (value) {
                           if (value == null || value.isEmpty) {
