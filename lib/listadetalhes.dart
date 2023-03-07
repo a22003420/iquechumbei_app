@@ -51,25 +51,54 @@ class DetalhesState extends State<Detalhes> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Text('Nível de dificuldade: ${widget.dificuldade}'),
-            const SizedBox(height: 8),
-            Text('Tipo de Avaliação: ${widget.tipoAvaliacao}'),
-            const SizedBox(height: 8),
-            Text('Data e hora da realização: ${widget.dataHora}'),
-            const SizedBox(height: 8),
-            Text('Observações: ${widget.observacoes}'),
-            Container(
-              margin: EdgeInsets.only(top: 16.0),
-              child: Center(
-                child: ElevatedButton(
-                  onPressed: (){
-                    // Abrir as aplicações to share
-                    Share.share(textToShare);
-                  },
-                  style: ElevatedButton.styleFrom(
-                    backgroundColor: Colors.lightBlue,
+            SizedBox(height: 20),
+            Text('Nível de dificuldade:',
+                style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold)),
+            Text('${widget.dificuldade}', style: TextStyle(fontSize: 18)),
+            SizedBox(height: 20),
+            Text('Tipo de Avaliação:',
+                style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold)),
+            Text('${widget.tipoAvaliacao}', style: TextStyle(fontSize: 18)),
+            SizedBox(height: 20),
+            Text('Data e hora da realização:',
+                style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold)),
+            Text('${widget.dataHora}', style: TextStyle(fontSize: 18)),
+            SizedBox(height: 20),
+            Text('Observações:',
+                style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold)),
+            Text('${widget.observacoes}', style: TextStyle(fontSize: 18)),
+            SizedBox(height: 20),
+            Center(
+              child: ElevatedButton(
+                onPressed: () {
+                  // Abrir as aplicações to share
+                  Share.share(textToShare);
+                },
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: Colors.lightBlue,
+                  padding: EdgeInsets.symmetric(horizontal: 60, vertical: 20),
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(30),
                   ),
-                  child: Text('\u{27A1} Partilhar avaliação'),
+                  elevation: 5,
+                ),
+                child: Row(
+                  mainAxisSize: MainAxisSize.min,
+                  children: [
+                    Icon(
+                      Icons.share,
+                      size: 30,
+                      color: Colors.white,
+                    ),
+                    SizedBox(width: 10),
+                    Text(
+                      'Partilhar avaliação',
+                      style: TextStyle(
+                        fontSize: 20,
+                        color: Colors.white,
+                      ),
+                    ),
+                  ],
                 ),
               ),
             ),

@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_slidable/flutter_slidable.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'listadetalhes.dart';
 
@@ -167,6 +168,7 @@ class _ListaState extends State<Lista> {
     setState(() {
       _disciplinas_added = disciplinas;
     });
+
   }
 
   int _disciplinasEliminadas = 0; //
@@ -231,30 +233,64 @@ class _ListaState extends State<Lista> {
   Widget build(BuildContext context) {
     print("Total de disciplinas adicionadas: ${_disciplinas_added.length}");
     return Scaffold(
+      backgroundColor: Colors.grey[200],
       appBar: AppBar(
         backgroundColor: Colors.blue,
         title: Text(
           "Listagem de avaliações",
           style: TextStyle(
-            fontSize: 24.0, // tamanho da fonte em pontos
-            fontWeight: FontWeight.bold, // negrito
+            fontSize: 24.0,
+            fontWeight: FontWeight.bold,
+            color: Colors.white,
           ),
         ),
       ),
-      body: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Expanded(
-            child: Scrollbar(
-              thumbVisibility: true,
-              child: ListView(
-                padding: EdgeInsets.only(top: 14.0),
-                children: _disciplinas_fixo + _disciplinas_added,
+      body: Padding(
+        padding: const EdgeInsets.all(16.0),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            SizedBox(height: 20.0),
+            Text(
+              "Avaliações adicionadas",
+              style: TextStyle(
+                fontSize: 18.0,
+                fontWeight: FontWeight.bold,
+                color: Colors.grey[800],
               ),
             ),
-          ),
-        ],
+            SizedBox(height: 10.0),
+            Expanded(
+              child: Container(
+                decoration: BoxDecoration(
+                  color: Colors.white,
+                  borderRadius: BorderRadius.circular(10.0),
+                  boxShadow: [
+                    BoxShadow(
+                      color: Colors.grey[400]!,
+                      blurRadius: 2.0,
+                      offset: Offset(2.0, 2.0),
+                    ),
+                  ],
+                ),
+                child: Scrollbar(
+                  thickness: 6.0,
+                  radius: Radius.circular(10.0),
+                  child: ListView(
+                    padding: EdgeInsets.symmetric(
+                      vertical: 8.0,
+                      horizontal: 16.0,
+                    ),
+                    children: _disciplinas_fixo + _disciplinas_added,
+                  ),
+                ),
+              ),
+            ),
+          ],
+        ),
       ),
     );
   }
+
+
 }

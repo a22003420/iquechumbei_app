@@ -90,175 +90,195 @@ class _RegistoState extends State<Registo> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: ListView(
-        children: [
-          AppBar(
-            title: Text(
-              'Registo de avaliação',
-              style: TextStyle(
-                fontSize: 24.0, // tamanho da fonte em pontos
-                fontWeight: FontWeight.bold, // negrito
+      body: SafeArea(
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Container(
+              color: Colors.blue,
+              child: Padding(
+                padding:
+                    const EdgeInsets.symmetric(vertical: 16, horizontal: 24),
+                child: Row(
+                  children: [
+                    Text(
+                      'Registo de avaliação',
+                      style: TextStyle(
+                        fontSize: 24.0,
+                        fontWeight: FontWeight.bold,
+                        color: Colors.white,
+                      ),
+                    ),
+                  ],
+                ),
               ),
             ),
-            backgroundColor: Colors.blue,
-          ),
-          Padding(
-            padding: EdgeInsets.all(16),
-            child: Form(
-              key: _formKey,
-              child: Column(
-                children: [
-                  TextFormField(
-                    controller: _disciplinaController,
-                    decoration: InputDecoration(
-                      labelText: 'Nome da disciplina (ex:. LP2)',
-                    ),
-                    validator: (value) {
-                      if (value!.isEmpty) {
-                        return 'Faltar colocar o nome da disciplina';
-                      }
-                      return null;
-                    },
-                  ),
-                  SizedBox(height: 16),
-                  TextFormField(
-                    controller: _avaliacaoController,
-                    decoration: InputDecoration(
-                      labelText:
-                          'Tipo de avaliação (ex:. frequencia, mini-teste, projeto ou defesa)',
-                    ),
-                    keyboardType: TextInputType.text,
-                    validator: (value) {
-                      if (value!.isEmpty) {
-                        return 'Falta colocar o tipo de avaliação';
-                      }
-                      List<String> tiposAvaliacao = [
-                        'frequencia',
-                        'mini-teste',
-                        'projeto',
-                        'defesa'
-                      ];
-                      if (!tiposAvaliacao.contains(value.toLowerCase())) {
-                        return 'Tipo de avaliação inválido.';
-                      }
-
-                      return null;
-                    },
-                  ),
-                  SizedBox(height: 16),
-                  TextFormField(
-                    controller: _dataHoraController,
-                    decoration: InputDecoration(
-                      labelText:
-                          'Data e hora da realização (ex formato:. 2023/01/31 14:30)',
-                    ),
-                    onTap: () async {
-                      DateTime? pickedDate = await showDatePicker(
-                        context: context,
-                        initialDate: DateTime.now(),
-                        firstDate: DateTime(2023),
-                        lastDate: DateTime(2101),
-                      );
-                      if (pickedDate != null) {
-                        TimeOfDay? pickedTime = await showTimePicker(
-                          context: context,
-                          initialTime: TimeOfDay.now(),
-                        );
-                        if (pickedTime != null) {
-                          DateTime pickedDateTime = DateTime(
-                            pickedDate.year,
-                            pickedDate.month,
-                            pickedDate.day,
-                            pickedTime.hour,
-                            pickedTime.minute,
-                          );
-
-                          // data e hora igual ou posterior à atual - Validação
-                          if (pickedDateTime.isAtSameMomentAs(DateTime.now()) ||
-                              pickedDateTime.isAfter(DateTime.now())) {
-                            String formattedDate =
-                                DateFormat('yyyy/MM/dd HH:mm')
-                                    .format(pickedDateTime);
-                            _dataHoraController.text = formattedDate;
-                          } else {
-                            showDialog(
-                              context: context,
-                              builder: (BuildContext context) {
-                                return AlertDialog(
-                                  title: Text('Data e hora inválidas'),
-                                  content: Text(
-                                      'Seleccione uma data e hora posterior ou igual à atual.'),
-                                  actions: [
-                                    TextButton(
-                                      onPressed: () => Navigator.pop(context),
-                                      child: Text('OK'),
-                                    ),
-                                  ],
-                                );
-                              },
-                            );
+            Expanded(
+              child: Padding(
+                padding: const EdgeInsets.all(40.0),
+                child: Form(
+                  key: _formKey,
+                  child: ListView(
+                    children: [
+                      TextFormField(
+                        controller: _disciplinaController,
+                        decoration: InputDecoration(
+                          labelText: 'Nome da disciplina (ex:. LP2)',
+                          border: OutlineInputBorder(),
+                        ),
+                        validator: (value) {
+                          if (value!.isEmpty) {
+                            return 'Faltar colocar o nome da disciplina';
                           }
-                        }
-                      }
-                    },
-                    validator: (value) {
-                      if (value!.isEmpty) {
-                        return 'Falta colocar a Data e Hora da realização da avaliação';
-                      }
-                      return null;
-                    },
-                  ),
-                  SizedBox(height: 16),
-                  TextFormField(
-                    controller: _dificuldadeController,
-                    decoration: InputDecoration(
-                      labelText:
-                          ' Nível de dificuldade esperado pelo aluno (Entre 1 e 5)',
-                    ),
-                    keyboardType: TextInputType.number,
-                    validator: (value) {
-                      if (value == null || value.isEmpty) {
-                        return 'Falta colocar o nível de dificuldade esperado';
-                      }
+                          return null;
+                        },
+                      ),
+                      SizedBox(height: 16),
+                      TextFormField(
+                        controller: _avaliacaoController,
+                        decoration: InputDecoration(
+                          labelText:
+                              'Tipo de avaliação (ex:. frequencia, mini-teste)',
+                          border: OutlineInputBorder(),
+                        ),
+                        keyboardType: TextInputType.text,
+                        validator: (value) {
+                          if (value!.isEmpty) {
+                            return 'Falta colocar o tipo de avaliação';
+                          }
+                          List<String> tiposAvaliacao = [
+                            'frequencia',
+                            'mini-teste',
+                            'projeto',
+                            'defesa'
+                          ];
+                          if (!tiposAvaliacao.contains(value.toLowerCase())) {
+                            return 'Tipo de avaliação inválido.';
+                          }
 
-                      if (int.tryParse(value) == null) {
-                        return 'Por favor, insira um número válido';
-                      }
+                          return null;
+                        },
+                      ),
+                      SizedBox(height: 16),
+                      TextFormField(
+                        controller: _dataHoraController,
+                        decoration: InputDecoration(
+                          labelText:
+                              'Data e hora da realização',
+                          border: OutlineInputBorder(),
+                        ),
+                        onTap: () async {
+                          DateTime? pickedDate = await showDatePicker(
+                            context: context,
+                            initialDate: DateTime.now(),
+                            firstDate: DateTime(2023),
+                            lastDate: DateTime(2101),
+                          );
+                          if (pickedDate != null) {
+                            TimeOfDay? pickedTime = await showTimePicker(
+                              context: context,
+                              initialTime: TimeOfDay.now(),
+                            );
+                            if (pickedTime != null) {
+                              DateTime pickedDateTime = DateTime(
+                                pickedDate.year,
+                                pickedDate.month,
+                                pickedDate.day,
+                                pickedTime.hour,
+                                pickedTime.minute,
+                              );
 
-                      List<int> dificuldadeRange = [1, 2, 3, 4, 5];
+                              // data e hora igual ou posterior à atual - Validação
+                              if (pickedDateTime
+                                      .isAtSameMomentAs(DateTime.now()) ||
+                                  pickedDateTime.isAfter(DateTime.now())) {
+                                String formattedDate =
+                                    DateFormat('yyyy/MM/dd HH:mm')
+                                        .format(pickedDateTime);
+                                _dataHoraController.text = formattedDate;
+                              } else {
+                                showDialog(
+                                  context: context,
+                                  builder: (BuildContext context) {
+                                    return AlertDialog(
+                                      title: Text('Data e hora inválidas'),
+                                      content: Text(
+                                          'Seleccione uma data e hora posterior ou igual à atual.'),
+                                      actions: [
+                                        TextButton(
+                                          onPressed: () =>
+                                              Navigator.pop(context),
+                                          child: Text('OK'),
+                                        ),
+                                      ],
+                                    );
+                                  },
+                                );
+                              }
+                            }
+                          }
+                        },
+                        validator: (value) {
+                          if (value!.isEmpty) {
+                            return 'Falta colocar a Data e Hora da realização da avaliação';
+                          }
+                          return null;
+                        },
+                      ),
+                      SizedBox(height: 16),
+                      TextFormField(
+                        controller: _dificuldadeController,
+                        decoration: InputDecoration(
+                          labelText:
+                              ' Nível de dificuldade esperado pelo aluno (Entre 1 e 5)',
+                        border: OutlineInputBorder(),
+                      ),
+                        keyboardType: TextInputType.number,
+                        validator: (value) {
+                          if (value == null || value.isEmpty) {
+                            return 'Falta colocar o nível de dificuldade esperado';
+                          }
 
-                      if (!dificuldadeRange.contains(int.parse(value))) {
-                        return 'Dificuldade inválida. Por favor, insira um valor entre 1 e 5';
-                      }
+                          if (int.tryParse(value) == null) {
+                            return 'Por favor, insira um número válido';
+                          }
 
-                      return null;
-                    },
+                          List<int> dificuldadeRange = [1, 2, 3, 4, 5];
+
+                          if (!dificuldadeRange.contains(int.parse(value))) {
+                            return 'Dificuldade inválida. Por favor, insira um valor entre 1 e 5';
+                          }
+
+                          return null;
+                        },
+                      ),
+                      SizedBox(height: 16),
+                      TextFormField(
+                        controller: _observacoesController,
+                        decoration: InputDecoration(
+                          labelText: 'Observações (opcional)',
+                        ),
+                        keyboardType: TextInputType.text,
+                        maxLength: 200,
+                        validator: (value) {
+                          // não tem código, pois é opcional
+                        },
+                      ),
+                      SizedBox(height: 16),
+                      ElevatedButton(
+                        onPressed: _guardarRegisto,
+                        child: Text('Guardar o registo da avaliação'),
+                        style: ElevatedButton.styleFrom(
+                          backgroundColor: Colors.blue,
+                        ),
+                      ),
+                    ],
                   ),
-                  SizedBox(height: 16),
-                  TextFormField(
-                    controller: _observacoesController,
-                    decoration: InputDecoration(
-                      labelText: 'Observações (opcional)',
-                    ),
-                    keyboardType: TextInputType.text,
-                    maxLength: 200,
-                    validator: (value) {
-                      // não tem código, pois é opcional
-                    },
-                  ),
-                  SizedBox(height: 16),
-                  ElevatedButton(
-                    onPressed: _guardarRegisto,
-                    child: Text('Guardar o registo da avaliação'),
-                    style: ElevatedButton.styleFrom(
-                      backgroundColor: Colors.blue,
-                    ),
-                  ),
-                ],
+                ),
               ),
             ),
-          ),
-        ],
+          ],
+        ),
       ),
     );
   }

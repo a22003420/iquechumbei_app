@@ -5,12 +5,19 @@ import 'dashboard.dart';
 import 'lista.dart';
 import 'registo.dart';
 
+bool _isFirstRun = true; //flag
+
+
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-
-  // limpa dados das shared preferences
   final prefs = await SharedPreferences.getInstance();
-  prefs.clear(); //to clear all the data
+if (_isFirstRun==true) { // testa se é a primeira vez que a app é executado
+      prefs.clear(); //to clear all the data
+      _isFirstRun = false; //flag
+    }else{
+      print("Não é a primeira vez que a app é corrida");
+    }
+print(_isFirstRun);
 
   runApp(HomeScreen());
 }
