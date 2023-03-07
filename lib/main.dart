@@ -11,9 +11,11 @@ bool _isFirstRun = true; //flag
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   final prefs = await SharedPreferences.getInstance();
+
 if (_isFirstRun==true) { // testa se é a primeira vez que a app é executado
-      prefs.clear(); //to clear all the data
-      _isFirstRun = false; //flag
+      // prefs.clear(); //to clear all the data
+      _isFirstRun = false;
+      print("É a primeira vez que a app é corrida");//flag
     }else{
       print("Não é a primeira vez que a app é corrida");
     }
@@ -29,6 +31,7 @@ class HomeScreen extends StatefulWidget {
 
 class _HomeScreenState extends State<HomeScreen> {
   int _selectedIndex = 0;
+
   bool _isDarkMode = false; // adicionado para controlar o modo de luz/noturno
   final List<Widget> _screens = [
     Dashboard(),

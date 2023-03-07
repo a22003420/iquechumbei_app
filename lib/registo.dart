@@ -66,8 +66,7 @@ class _RegistoState extends State<Registo> {
 
     final registos = keys.map((key) {
       final value = preferences.get(key);
-      final values = value as List<String>;
-      print(values);
+      final values = value as List<dynamic>;
       final avaliacao = values.length > 0 ? values[0] : '';
       final dataHora = values.length > 1 ? values[1] : '';
       final dificuldade = values.length > 2 ? values[2] : '';

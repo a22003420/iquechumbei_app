@@ -71,7 +71,7 @@ class _ListaState extends State<Lista> {
     final keys = prefs.getKeys();
     final disciplinas = keys.map((key) {
       final value = prefs.get(key);
-      final values = value as List<String>;
+      final values = value as List<dynamic>;
       final avaliacao = values.length > 0 ? values[0] : '';
       final dataHora = values.length > 1 ? values[1] : '';
       final dificuldade = values.length > 2 ? values[2] : '';
