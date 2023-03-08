@@ -85,10 +85,11 @@ class Dashboard extends StatelessWidget {
         if (date.difference(now).inDays <= 1) {
           examNames.add({'name': examName, 'color': Colors.red, 'date': date});
         } else if (date.difference(now).inDays > 1) {
-          examNames.add({'name': examName, 'color': Colors.orange, 'date': date});
-        }
-        else {
-          examNames.add({'name': examName, 'color': Colors.green, 'date': date});
+          examNames
+              .add({'name': examName, 'color': Colors.orange, 'date': date});
+        } else {
+          examNames
+              .add({'name': examName, 'color': Colors.green, 'date': date});
         } // datas passadas ficam verdes
       }
     }
@@ -97,12 +98,6 @@ class Dashboard extends StatelessWidget {
     // assim fica mais bonito no ecrã, ordena crescente
     return examNames;
   }
-
-
-
-
-
-
 
   @override
   Widget build(BuildContext context) {
@@ -163,7 +158,8 @@ class Dashboard extends StatelessWidget {
                       FutureBuilder<List<dynamic>>(
                         future: _getNextWeekAssessmentsNames(),
                         builder: (context, snapshot) {
-                          if (snapshot.connectionState == ConnectionState.waiting) {
+                          if (snapshot.connectionState ==
+                              ConnectionState.waiting) {
                             return Center(child: CircularProgressIndicator());
                           } else if (snapshot.hasError) {
                             return Text('Erro: ${snapshot.error}');
@@ -181,7 +177,8 @@ class Dashboard extends StatelessWidget {
                                 ),
                                 SizedBox(height: 10),
                                 Container(
-                                  padding: EdgeInsets.symmetric(horizontal: 16.0),
+                                  padding:
+                                      EdgeInsets.symmetric(horizontal: 16.0),
                                   decoration: BoxDecoration(
                                     color: Colors.grey[100],
                                     borderRadius: BorderRadius.circular(8.0),
@@ -190,7 +187,8 @@ class Dashboard extends StatelessWidget {
                                     shrinkWrap: true,
                                     physics: NeverScrollableScrollPhysics(),
                                     itemCount: examNames.length,
-                                    itemBuilder: (BuildContext context, int index) {
+                                    itemBuilder:
+                                        (BuildContext context, int index) {
                                       final exam = examNames[index];
                                       return ListTile(
                                         dense: true,
@@ -204,7 +202,8 @@ class Dashboard extends StatelessWidget {
                                           ),
                                         ),
                                         subtitle: Text(
-                                          DateFormat('dd/MM/yyyy').format(exam['date']),
+                                          DateFormat('dd/MM/yyyy')
+                                              .format(exam['date']),
                                           style: TextStyle(
                                             fontSize: 16.0,
                                           ),
@@ -215,7 +214,6 @@ class Dashboard extends StatelessWidget {
                                 ),
                               ],
                             );
-
                           }
                         },
                       ),
@@ -223,7 +221,8 @@ class Dashboard extends StatelessWidget {
                       FutureBuilder<double>(
                         future: _AverageDifficulty(),
                         builder: (context, snapshot) {
-                          if (snapshot.connectionState == ConnectionState.waiting) {
+                          if (snapshot.connectionState ==
+                              ConnectionState.waiting) {
                             return Center(child: CircularProgressIndicator());
                           } else if (snapshot.hasError) {
                             return Text('Erro: ${snapshot.error}');
@@ -244,7 +243,8 @@ class Dashboard extends StatelessWidget {
                       FutureBuilder<double>(
                         future: _AverageDifficultyForFuture(),
                         builder: (context, snapshot) {
-                          if (snapshot.connectionState == ConnectionState.waiting) {
+                          if (snapshot.connectionState ==
+                              ConnectionState.waiting) {
                             return Center(child: CircularProgressIndicator());
                           } else if (snapshot.hasError) {
                             return Text('Erro: ${snapshot.error}');
@@ -255,7 +255,7 @@ class Dashboard extends StatelessWidget {
                               style: TextStyle(
                                 fontSize: 20.0,
                                 fontWeight: FontWeight.bold,
-                                  color: Colors.lightBlue,
+                                color: Colors.lightBlue,
                               ),
                             );
                           }
@@ -271,5 +271,4 @@ class Dashboard extends StatelessWidget {
       ),
     );
   }
-
 }

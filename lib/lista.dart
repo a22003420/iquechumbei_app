@@ -189,7 +189,6 @@ class _ListaState extends State<Lista> {
     );
   }
 
-
   int _disciplinasEditadas = 0; //
 
   Future<void> _editarDisciplina(String key, String avaliacao, String dataHora,
