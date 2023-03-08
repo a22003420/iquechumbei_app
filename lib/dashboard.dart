@@ -3,6 +3,8 @@ import 'package:intl/intl.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 class Dashboard extends StatelessWidget {
+
+
   Future<double> _AverageDifficulty() async {
     final now = DateTime.now();
     final nextWeek = now.add(Duration(days: 7));
