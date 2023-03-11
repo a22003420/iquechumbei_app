@@ -12,14 +12,14 @@ Nome: João Pedro Matos <br />
 Número: a22202497
 
 ## Screenshots dos ecrãs
-# Dashboard (1):<img src="images/img.png" height="50%" width="50%"> \n
-# Dashboard (2):<img src="images/img_8.png" height="50%" width="50%"> \n
-# Dashboard (3):<img src="images/img_10.png" height="50%" width="50%"> \n
-# Lista de Avaliações:<img src="images/img_1.png" height="50%" width="50%"> \n
-# Lista de Detalhe:<img src="images/img_4.png" height="50%" width="50%"> \n
-# Lista de Detalhe (Share/Dealer):<img src="images/img_5.png" height="50%" width="50%"> \n
-# Lista de Avaliações (Eliminar):<img src="images/img_6.png" height="50%" width="50%"> \n
-# Lista de Avaliações (Eliminado):<img src="images/img_7.png" height="50%" width="50%"> \n
+# Dashboard (1):<img src="images/img.png" height="50%" width="50%"> 
+# Dashboard (2): <img src="images/img_8.png" height="50%" width="50%"> 
+# Dashboard (3):<img src="images/img_10.png" height="50%" width="50%"> 
+# Lista de Avaliações:<img src="images/img_1.png" height="50%" width="50%"> 
+# Lista de Detalhe:<img src="images/img_4.png" height="50%" width="50%"> 
+# Lista de Detalhe (Share/Dealer):<img src="images/img_5.png" height="50%" width="50%"> 
+# Lista de Avaliações (Eliminar):<img src="images/img_6.png" height="50%" width="50%"> 
+# Lista de Avaliações (Eliminado):<img src="images/img_7.png" height="50%" width="50%"> 
 # Lista de Avaliações (Editar): missing
 # Lista de Avaliações (Editar): missing
 # Lista de Avaliações (Editado): missing
@@ -29,7 +29,7 @@ Número: a22202497
 
 ## Funcionalidades
 
-<img src="images/img_9.png" height="50%" width="50%"> \n
+<img src="images/img_9.png" height="50%" width="50%"> <br>
 
 Segundo este quadro facultado pelo professor, a aplicação tem as seguintes funcionalidades:
 
