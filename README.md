@@ -54,8 +54,8 @@ laranja, ambos com a data e a hora da avaliação (achei pretinente na ótica do
 
 <img src="images/img_11.png" height="50%" width="50%"> <br>
 <img src="images/img_12.png" height="50%" width="50%"> <br>
-<img src="images/img_0003.png" height="50%" width="50%"> <br>
-<img src="images/img_0002.png" height="50%" width="50%"> <br>
+<img src="images/image_0003.png" height="50%" width="50%"> <br>
+<img src="images/img0002.png" height="50%" width="50%"> <br>
 (Neste print é mostrado o texto numa mensagem de texto pronta a enviar)
 
 
