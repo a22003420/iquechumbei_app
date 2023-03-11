@@ -20,7 +20,7 @@ void main() async {
     print("Não é a primeira vez que a app é corrida");
   }
   print(_isFirstRun);
-
+  print(DateTime.now());
   runApp(HomeScreen());
 }
 

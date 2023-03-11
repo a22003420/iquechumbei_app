@@ -3,8 +3,6 @@ import 'package:intl/intl.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 class Dashboard extends StatelessWidget {
-
-
   Future<double> _AverageDifficulty() async {
     final now = DateTime.now();
     final nextWeek = now.add(Duration(days: 7));
@@ -109,7 +107,7 @@ class Dashboard extends StatelessWidget {
           child: Text(
             'iQueChumbei',
             style: TextStyle(
-              fontSize: 24.0,
+              fontSize: 30.0,
               fontWeight: FontWeight.bold,
             ),
           ),
@@ -121,7 +119,7 @@ class Dashboard extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             SizedBox(
-              height: 650,
+              height: 690,
               child: Card(
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(10.0),
@@ -204,10 +202,11 @@ class Dashboard extends StatelessWidget {
                                           ),
                                         ),
                                         subtitle: Text(
-                                          DateFormat('dd/MM/yyyy')
-                                              .format(exam['date']),
+                                          '${DateFormat('dd/MM/yyyy').format(exam['date'])}'
+                                              ' | ${DateFormat('HH:mm').format(exam['date'])}',
                                           style: TextStyle(
                                             fontSize: 16.0,
+                                            color: Colors.black,
                                           ),
                                         ),
                                       );

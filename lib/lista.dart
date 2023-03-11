@@ -220,6 +220,8 @@ class _ListaState extends State<Lista> {
     );
   }
 
+
+
   @override
   Widget build(BuildContext context) {
     print("Total de disciplinas adicionadas: ${_disciplinas_added.length}");
@@ -228,7 +230,7 @@ class _ListaState extends State<Lista> {
       appBar: AppBar(
         backgroundColor: Colors.blue,
         title: Text(
-          "Listagem de avaliações",
+          "Lista de avaliações",
           style: TextStyle(
             fontSize: 24.0,
             fontWeight: FontWeight.bold,

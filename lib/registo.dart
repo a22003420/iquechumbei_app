@@ -1,7 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
-import 'lista.dart';
 import 'package:intl/intl.dart';
 
 class Registo extends StatefulWidget {
