@@ -31,7 +31,7 @@ Número: a22202497
 
 <img src="images/img_9.png" height="50%" width="50%"> <br>
 
-Segundo este quadro facultado pelo professor, a aplicação tem as seguintes funcionalidades:
+Segundo este quadro facultado pelo professor, a aplicação desenvolvida tem as seguintes funcionalidades:
 
 1. Criação de uma lista de avaliações organizada por data/hora, com as seguintes características 
 através de um formulário no ecrã de registo em que é pedido ao utilizador:
