@@ -52,12 +52,13 @@ laranja, ambos com a data e a hora da avaliação (achei pretinente na ótica do
 
 ## Dealer
 
-![img_11.png](images/img_11.png){ width=200px height=200px }
-![img_12.png](images/img_12.png) 
-![img_5.png](images/img_5.png) 
-![img_13.png](images/img_13.png) 
+![](images/img_11.png)
+<img src="images/img_12.png" width="200" height="200"> 
+<img src="images/img_5.png" width="200" height="200"> 
+<img src="images/img_13.png" width="200" height="200"> 
 (Neste print é mostrado o texto num mensagem de texto pronta a enviar)
 
+<img src="images/img_11.png" width="50%" height="50%">
 
 A função dealer foi implementada com a função Share.share() mostrada em cima. 
 Usei a biblioteca 'share' do flutter que permite partilhar o texto, passando-lhe a 
