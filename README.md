@@ -12,24 +12,24 @@ Nome: João Pedro Matos <br />
 Número: a22202497
 
 ## Screenshots dos ecrãs
-# Dashboard (1):<img src="images/img.png" height="50%" width="50%">
-# Dashboard (2):<img src="images/img_8.png" height="50%" width="50%">
-# Dashboard (3):<img src="images/img_10.png" height="50%" width="50%">
-# Lista de Avaliações:<img src="images/img_1.png" height="50%" width="50%">
-# Lista de Detalhe:<img src="images/img_4.png" height="50%" width="50%">
-# Lista de Detalhe (Share/Dealer):<img src="images/img_5.png" height="50%" width="50%">
-# Lista de Avaliações (Eliminar):<img src="images/img_6.png" height="50%" width="50%">
-# Lista de Avaliações (Eliminado):<img src="images/img_7.png" height="50%" width="50%">
+# Dashboard (1):<img src="images/img.png" height="50%" width="50%"> \n
+# Dashboard (2):<img src="images/img_8.png" height="50%" width="50%"> \n
+# Dashboard (3):<img src="images/img_10.png" height="50%" width="50%"> \n
+# Lista de Avaliações:<img src="images/img_1.png" height="50%" width="50%"> \n
+# Lista de Detalhe:<img src="images/img_4.png" height="50%" width="50%"> \n
+# Lista de Detalhe (Share/Dealer):<img src="images/img_5.png" height="50%" width="50%"> \n
+# Lista de Avaliações (Eliminar):<img src="images/img_6.png" height="50%" width="50%"> \n
+# Lista de Avaliações (Eliminado):<img src="images/img_7.png" height="50%" width="50%"> \n
 # Lista de Avaliações (Editar): missing
 # Lista de Avaliações (Editar): missing
 # Lista de Avaliações (Editado): missing
-# Registo de Avaliação: <img src="images/img_2.png" height="50%" width="50%">
-# Registo de Avaliação: <img src="images/img_3.png" height="50%" width="50%">
+# Registo de Avaliação: <img src="images/img_2.png" height="50%" width="50%"> \n
+# Registo de Avaliação: <img src="images/img_3.png" height="50%" width="50%"> \n
 
 
 ## Funcionalidades
 
-<img src="images/img_9.png" height="50%" width="50%">
+<img src="images/img_9.png" height="50%" width="50%"> \n
 
 Segundo este quadro facultado pelo professor, a aplicação tem as seguintes funcionalidades:
 
@@ -52,10 +52,10 @@ laranja, ambos com a data e a hora da avaliação (achei pretinente na ótica do
 
 ## Dealer
 
-<img src="images/img_11.png" height="50%" width="50%"> 
-<img src="images/img_12.png" height="50%" width="50%"> 
-<img src="images/img_5.png" height="50%" width="50%"> 
-<img src="images/img_13.png" height="50%" width="50%"> 
+<img src="images/img_11.png" height="50%" width="50%"> <br>
+<img src="images/img_12.png" height="50%" width="50%"> <br>
+<img src="images/img_5.png" height="50%" width="50%"> <br>
+<img src="images/img_13.png" height="50%" width="50%"> <br>
 (Neste print é mostrado o texto num mensagem de texto pronta a enviar)
 
 
