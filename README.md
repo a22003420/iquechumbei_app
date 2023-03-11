@@ -54,19 +54,19 @@ laranja, ambos com a data e a hora da avaliação (achei pretinente na ótica do
 
 <img src="images/img_11.png" height="50%" width="50%"> <br>
 <img src="images/img_12.png" height="50%" width="50%"> <br>
-<img src="images/img_5.png" height="50%" width="50%"> <br>
-<img src="images/img_13.png" height="50%" width="50%"> <br>
-(Neste print é mostrado o texto num mensagem de texto pronta a enviar)
+<img src="images/img_0003.png" height="50%" width="50%"> <br>
+<img src="images/img_0002.png" height="50%" width="50%"> <br>
+(Neste print é mostrado o texto numa mensagem de texto pronta a enviar)
 
 
 A função dealer foi implementada com a função Share.share() mostrada em cima. 
 Usei a biblioteca 'share' do flutter que permite partilhar o texto, passando-lhe a 
 variável textToShare. Nota que foi necessário adicionar a dependencia no pubspec.yaml: share: ^2.0.4.
-Também foi necessário fazer este import 'package:share/share.dart';
+Também foi necessário fazer o import desde package 'package:share/share.dart';
 Assim, esta funcionalidade foi implementada no ecrã de detalhe com recurso ao botão Partilhar 
 avaliação.
 
 
 
 ## Autoavaliação
-Nota: 15 valores
+Nota: 14.5 valores
