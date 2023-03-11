@@ -220,8 +220,6 @@ class _ListaState extends State<Lista> {
     );
   }
 
-
-
   @override
   Widget build(BuildContext context) {
     print("Total de disciplinas adicionadas: ${_disciplinas_added.length}");

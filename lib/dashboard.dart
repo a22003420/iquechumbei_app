@@ -203,7 +203,7 @@ class Dashboard extends StatelessWidget {
                                         ),
                                         subtitle: Text(
                                           '${DateFormat('dd/MM/yyyy').format(exam['date'])}'
-                                              ' | ${DateFormat('HH:mm').format(exam['date'])}',
+                                          ' | ${DateFormat('HH:mm').format(exam['date'])}',
                                           style: TextStyle(
                                             fontSize: 16.0,
                                             color: Colors.black,
