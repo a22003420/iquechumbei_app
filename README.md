@@ -12,24 +12,24 @@ Nome: João Pedro Matos <br />
 Número: a22202497
 
 ## Screenshots dos ecrãs
-# Dashboard (1):![img.png](images/img.png) \n
-# Dashboard (2):![img_8.png](images/img_8.png) \n
-# Dashboard (3):![img_10.png](images/img_10.png) \n
-# Lista de Avaliações:![img_1.png](images/img_1.png) \n
-# Lista de Detalhe:![img_4.png](images/img_4.png) \n
-# Lista de Detalhe (Share/Dealer):![img_5.png](images/img_5.png) \n
-# Lista de Avaliações (Eliminar):![img_6.png](images/img_6.png) \n
-# Lista de Avaliações (Eliminado):![img_7.png](images/img_7.png) \n
-# Lista de Avaliações (Editar): \n
-# Lista de Avaliações (Editar): \n
-# Lista de Avaliações (Editado): \n
-# Registo de Avaliação: ![img_2.png](images/img_2.png) \n
-# Registo de Avaliação: ![img_3.png](images/img_3.png) \n
+# Dashboard (1):![img.png](images/img.png) 
+# Dashboard (2):![img_8.png](images/img_8.png) 
+# Dashboard (3):![img_10.png](images/img_10.png) 
+# Lista de Avaliações:![img_1.png](images/img_1.png) 
+# Lista de Detalhe:![img_4.png](images/img_4.png) 
+# Lista de Detalhe (Share/Dealer):![img_5.png](images/img_5.png) 
+# Lista de Avaliações (Eliminar):![img_6.png](images/img_6.png) 
+# Lista de Avaliações (Eliminado):![img_7.png](images/img_7.png) 
+# Lista de Avaliações (Editar): missing
+# Lista de Avaliações (Editar): missing
+# Lista de Avaliações (Editado): missing
+# Registo de Avaliação: ![img_2.png](images/img_2.png) 
+# Registo de Avaliação: ![img_3.png](images/img_3.png) 
 
 
 ## Funcionalidades
 
-![img_9.png](images/img_9.png)\n
+![img_9.png](images/img_9.png)
 
 Segundo este quadro facultado pelo professor, a aplicação tem as seguintes funcionalidades:
 
@@ -52,10 +52,10 @@ laranja, ambos com a data e a hora da avaliação (achei pretinente na ótica do
 
 ## Dealer
 
-![img_11.png](images/img_11.png) \n
-![img_12.png](images/img_12.png) \n
-![img_5.png](images/img_5.png) \n
-![img_13.png](images/img_13.png) \n
+![img_11.png](images/img_11.png){ width=200px height=200px }
+![img_12.png](images/img_12.png) 
+![img_5.png](images/img_5.png) 
+![img_13.png](images/img_13.png) 
 (Neste print é mostrado o texto num mensagem de texto pronta a enviar)
 
 
