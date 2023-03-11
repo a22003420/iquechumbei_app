@@ -52,10 +52,10 @@ laranja, ambos com a data e a hora da avaliação (achei pretinente na ótica do
 
 ## Dealer
 
-![](images/img_11.png)
-<img src="images/img_12.png" width="200" height="200"> 
-<img src="images/img_5.png" width="200" height="200"> 
-<img src="images/img_13.png" width="200" height="200"> 
+<img src="images/img_11.png" height="50%" width="50%"> 
+<img src="images/img_12.png" height="50%" width="50%"> 
+<img src="images/img_5.png" height="50%" width="50%"> 
+<img src="images/img_13.png" height="50%" width="50%"> 
 (Neste print é mostrado o texto num mensagem de texto pronta a enviar)
 
 <img src="images/img_11.png" width="50%" height="50%">
