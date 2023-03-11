@@ -1,9 +1,9 @@
 # iquechumbei_app
 1. Aplicação móvel desenolvida em Flutter para a disciplina de Computação móvel, 
 com o .apk testado no Pixel 6 Pro com android 13.0.
-2. Construi esta aplicação usando o shared_preferences para guardar os dados do utilizador, 
-mesmo que a mesma seja fechada, os dados do utilizador são guardados e quando volta a abrir a 
-aplicação, os dados passados são carregados/loaded, 
+2. Construi esta aplicação usando o shared_preferences para guardar os dados do utilizador de 
+forma persistente, mesmo que a mesma seja fechada, os dados do utilizador são guardados e 
+quando volta a abrir a aplicação, os dados passados são recuperados/loaded, 
 tornado assim esta aplicação útil e podendo ser utilizada.
 
 ## Dados de aluno
@@ -12,24 +12,24 @@ Nome: João Pedro Matos <br />
 Número: a22202497
 
 ## Screenshots dos ecrãs
-# Dashboard (1):![img.png](images/img.png) 
-# Dashboard (2):![img_8.png](images/img_8.png) 
-# Dashboard (3):![img_10.png](images/img_10.png) 
-# Lista de Avaliações:![img_1.png](images/img_1.png) 
-# Lista de Detalhe:![img_4.png](images/img_4.png) 
-# Lista de Detalhe (Share/Dealer):![img_5.png](images/img_5.png) 
-# Lista de Avaliações (Eliminar):![img_6.png](images/img_6.png) 
-# Lista de Avaliações (Eliminado):![img_7.png](images/img_7.png) 
+# Dashboard (1):<img src="images/img.png" height="50%" width="50%">
+# Dashboard (2):<img src="images/img_8.png" height="50%" width="50%">
+# Dashboard (3):<img src="images/img_10.png" height="50%" width="50%">
+# Lista de Avaliações:<img src="images/img_1.png" height="50%" width="50%">
+# Lista de Detalhe:<img src="images/img_4.png" height="50%" width="50%">
+# Lista de Detalhe (Share/Dealer):<img src="images/img_5.png" height="50%" width="50%">
+# Lista de Avaliações (Eliminar):<img src="images/img_6.png" height="50%" width="50%">
+# Lista de Avaliações (Eliminado):<img src="images/img_7.png" height="50%" width="50%">
 # Lista de Avaliações (Editar): missing
 # Lista de Avaliações (Editar): missing
 # Lista de Avaliações (Editado): missing
-# Registo de Avaliação: ![img_2.png](images/img_2.png) 
-# Registo de Avaliação: ![img_3.png](images/img_3.png) 
+# Registo de Avaliação: <img src="images/img_2.png" height="50%" width="50%">
+# Registo de Avaliação: <img src="images/img_3.png" height="50%" width="50%">
 
 
 ## Funcionalidades
 
-![img_9.png](images/img_9.png)
+<img src="images/img_9.png" height="50%" width="50%">
 
 Segundo este quadro facultado pelo professor, a aplicação tem as seguintes funcionalidades:
 
@@ -58,7 +58,6 @@ laranja, ambos com a data e a hora da avaliação (achei pretinente na ótica do
 <img src="images/img_13.png" height="50%" width="50%"> 
 (Neste print é mostrado o texto num mensagem de texto pronta a enviar)
 
-<img src="images/img_11.png" width="50%" height="50%">
 
 A função dealer foi implementada com a função Share.share() mostrada em cima. 
 Usei a biblioteca 'share' do flutter que permite partilhar o texto, passando-lhe a 
