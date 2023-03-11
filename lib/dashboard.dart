@@ -205,7 +205,7 @@ class Dashboard extends StatelessWidget {
                                           '${DateFormat('dd/MM/yyyy').format(exam['date'])}'
                                               ' | ${DateFormat('HH:mm').format(exam['date'])}',
                                           style: TextStyle(
-                                            fontSize: 17.0,
+                                            fontSize: 16.0,
                                             color: Colors.black,
                                           ),
                                         ),
