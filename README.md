@@ -12,7 +12,7 @@ Nome: João Pedro Matos <br />
 Número: a22202497
 
 ## Screenshots dos ecrãs
-# Dashboard (1):<img src="images/img.png" height="50%" width="50%"> 
+# Dashboard (1): <br> <img src="images/img.png" height="50%" width="50%"> 
 # Dashboard (2): <img src="images/img_8.png" height="50%" width="50%"> 
 # Dashboard (3):<img src="images/img_10.png" height="50%" width="50%"> 
 # Lista de Avaliações:<img src="images/img_1.png" height="50%" width="50%"> 
