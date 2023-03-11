@@ -16,7 +16,7 @@ Número: a22202497
 ### Dashboard (2): <br> <br> <img src="images/img_8.png" height="50%" width="50%"> 
 ### Dashboard (3): <br> <br><img src="images/img_10.png" height="50%" width="50%">
 ### Dashboard (4): <br> <br><img src="images/img_001.png" height="50%" width="50%">
-### Lista de Avaliações: <br> <br><img src="images/img_1.png" height="50%" width="50%"> 
+### Lista de Avaliações organizada por datas: <br> <br><img src="images/img_1.png" height="50%" width="50%"> 
 ### Lista de Detalhe: <br> <br><img src="images/img_4.png" height="50%" width="50%"> 
 ### Lista de Detalhe (Share/Dealer): <br> <br><img src="images/img_5.png" height="50%" width="50%"> 
 ### Lista de Avaliações (Eliminar): <br> <br><img src="images/img_6.png" height="50%" width="50%"> 
@@ -33,22 +33,22 @@ Número: a22202497
 
 Segundo este quadro facultado pelo professor, a aplicação tem as seguintes funcionalidades:
 
-1. Criação de uma lista de avaliações, com as seguintes características através de um formulário no 
-ecrã de registo em que é pedido ao utilizador:
+1. Criação de uma lista de avaliações organizada por datas, com as seguintes características 
+através de um formulário no ecrã de registo em que é pedido ao utilizador:
     1. Nome da disciplina
     2. Tipo de avaliação
     3. Data e hora da avaliação
     4. Nível de dificuldade esperado para essa avaliação
     5. Observações como campo opcional
-2. Edição de uma avaliação com verficação de confirmação por parte do utilizador.
-3. Eliminação de uma avaliação com verficação de confirmação por parte do utilizador.
-4. Consulta do detalhe de uma avaliação em que temos a informação da avaliação, bem como a 
+3. Edição de uma avaliação com verficação de confirmação por parte do utilizador.
+4. Eliminação de uma avaliação com verficação de confirmação por parte do utilizador.
+5. Consulta do detalhe de uma avaliação em que temos a informação da avaliação, bem como a 
 possibiliade de partilhar a mesma através da funcionalidade implementada Dealer.
-5. Fiz um dashboard em que aparece o cálculo da média da dificuldade das avaliações para os próximos
+6. Fiz um dashboard em que aparece o cálculo da média da dificuldade das avaliações para os próximos
 7 dias, bem como entre os 7 e os 14 dias, assim como a lista das próximas avaliações num
 período de 7 dias, identifcando o próprio dia/ dia seguinte a vermelho, e os restantes dias a 
 laranja, ambos com a data e a hora da avaliação (achei pretinente na ótica do User Experience).
-6. Por fim, foram feitos algum testes unitários que achei pretinentes.
+7. Por fim, foram feitos algum testes unitários que achei pretinentes.
 
 ## Dealer
 
