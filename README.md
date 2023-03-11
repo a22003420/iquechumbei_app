@@ -23,8 +23,8 @@ Número: a22202497
 ### Lista de Avaliações (Eliminado): <br> <br><img src="images/img_7.png" height="50%" width="50%"> 
 ### Lista de Avaliações (Editar): <br> <br> missing
 ### Lista de Avaliações (Editado): <br> <br> missing
-### Registo de Avaliação: <br> <br> <img src="images/img_2.png" height="50%" width="50%"> 
-### Registo de Avaliação: <br> <br> <img src="images/img_3.png" height="50%" width="50%"> 
+### Registo de Avaliação (1): <br> <br> <img src="images/img_2.png" height="50%" width="50%"> 
+### Registo de Avaliação (2): <br> <br> <img src="images/img_3.png" height="50%" width="50%"> 
 
 
 ## Funcionalidades
