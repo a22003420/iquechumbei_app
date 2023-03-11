@@ -14,17 +14,17 @@ Número: a22202497
 ## Screenshots dos ecrãs
 # Dashboard (1): <br> <br> <img src="images/img.png" height="50%" width="50%"> 
 # Dashboard (2): <br> <br> <img src="images/img_8.png" height="50%" width="50%"> 
-# Dashboard (3): <br> <br><img src="images/img_10.png" height="50%" width="50%"> 
+# Dashboard (3): <br> <br><img src="images/img_10.png" height="50%" width="50%">
+# Dashboard (4): <br> <br><img src="images/img_001.png" height="50%" width="50%">
 # Lista de Avaliações: <br> <br><img src="images/img_1.png" height="50%" width="50%"> 
 # Lista de Detalhe: <br> <br><img src="images/img_4.png" height="50%" width="50%"> 
 # Lista de Detalhe (Share/Dealer): <br> <br><img src="images/img_5.png" height="50%" width="50%"> 
 # Lista de Avaliações (Eliminar): <br> <br><img src="images/img_6.png" height="50%" width="50%"> 
 # Lista de Avaliações (Eliminado): <br> <br><img src="images/img_7.png" height="50%" width="50%"> 
 # Lista de Avaliações (Editar): <br> <br> missing
-# Lista de Avaliações (Editar): <br> <br> missing
 # Lista de Avaliações (Editado): <br> <br> missing
-# Registo de Avaliação: <br> <br> <img src="images/img_2.png" height="50%" width="50%"> \n
-# Registo de Avaliação: <br> <br> <img src="images/img_3.png" height="50%" width="50%"> \n
+# Registo de Avaliação: <br> <br> <img src="images/img_2.png" height="50%" width="50%"> 
+# Registo de Avaliação: <br> <br> <img src="images/img_3.png" height="50%" width="50%"> 
 
 
 ## Funcionalidades
