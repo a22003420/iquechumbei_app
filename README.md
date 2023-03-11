@@ -16,7 +16,7 @@ Número: a22202497
 ### Dashboard (2): <br> <br> <img src="images/img_8.png" height="50%" width="50%"> 
 ### Dashboard (3): <br> <br><img src="images/img_10.png" height="50%" width="50%">
 ### Dashboard (4): <br> <br><img src="images/img_001.png" height="50%" width="50%">
-### Lista de Avaliações organizada por datas: <br> <br><img src="images/img_1.png" height="50%" width="50%"> 
+### Lista de Avaliações organizada por data/hora: <br> <br><img src="images/img_1.png" height="50%" width="50%"> 
 ### Lista de Detalhe: <br> <br><img src="images/img_4.png" height="50%" width="50%"> 
 ### Lista de Detalhe (Share/Dealer): <br> <br><img src="images/img_5.png" height="50%" width="50%"> 
 ### Lista de Avaliações (Eliminar): <br> <br><img src="images/img_6.png" height="50%" width="50%"> 
@@ -33,7 +33,7 @@ Número: a22202497
 
 Segundo este quadro facultado pelo professor, a aplicação tem as seguintes funcionalidades:
 
-1. Criação de uma lista de avaliações organizada por datas, com as seguintes características 
+1. Criação de uma lista de avaliações organizada por data/hora, com as seguintes características 
 através de um formulário no ecrã de registo em que é pedido ao utilizador:
     1. Nome da disciplina
     2. Tipo de avaliação
