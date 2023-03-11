@@ -1,4 +1,4 @@
-# iquechumbei_app
+# iQueChumbei_app
 1. Aplicação móvel desenolvida em Flutter para a disciplina de Computação móvel, 
 com o .apk testado no Pixel 6 Pro com android 13.0.
 2. Construi esta aplicação usando o shared_preferences para guardar os dados do utilizador de 
