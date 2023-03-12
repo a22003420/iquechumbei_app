@@ -83,7 +83,7 @@ void main() {
         }
       };
 
-      expect(await validator('2023/03/12 12:00'), null);
+      expect(await validator('2023/07/13 12:00'), null);
     });
   });
 

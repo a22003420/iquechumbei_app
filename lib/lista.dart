@@ -13,43 +13,6 @@ class Lista extends StatefulWidget {
 class _ListaState extends State<Lista> {
   List<Widget> _disciplinas_added = []; // carregadas pelo user
 
-  /* final List<Widget> _disciplinas_fixo = [
-    // pre carregadas
-    ListTile(
-      title: const Text('IHM'),
-      subtitle: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: const [
-          Text('Nível de dificuldade: 3'),
-          Text('Tipo de Avaliação: mini-teste'),
-          Text('Data da Realização: 2021/02/20 12:30'),
-        ],
-      ),
-    ),
-    ListTile(
-      title: const Text('Computação Móvel'),
-      subtitle: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: const [
-          Text('Nível de dificuldade: 4'),
-          Text('Tipo de Avaliação: frequência'),
-          Text('Data da Realização: 2021/03/20 13:30'),
-        ],
-      ),
-    ),
-    ListTile(
-      title: const Text('LP2'),
-      subtitle: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: const [
-          Text('Nível de dificuldade: 3'),
-          Text('Tipo de Avaliação: defesa'),
-          Text('Data da Realização: 2021/06/20 14:30'),
-        ],
-      ),
-    ),
-  ]; */
-
   @override
   void initState() {
     super.initState();
@@ -77,6 +40,9 @@ class _ListaState extends State<Lista> {
       final dificuldade = values.length > 2 ? values[2] : '';
       final observacoes = values.length > 3 ? values[3] : '';
 
+      final change = values.length > 1 ? values[1].replaceAll('/', '-') : '';
+      final isInterative = DateTime.parse(change).isAfter(DateTime.now());
+
       return ListTile(
         title: Text(key),
         subtitle: Column(
@@ -90,39 +56,50 @@ class _ListaState extends State<Lista> {
         trailing: Row(
           mainAxisSize: MainAxisSize.min,
           children: [
-            IconButton(
-              icon: Icon(Icons.delete),
-              onPressed: () => showDialog(
-                context: context,
-                builder: (context) => AlertDialog(
-                  title: Text('Eliminar disciplina'),
-                  content:
-                      Text('Tem certeza que quer eliminar esta disciplina?'),
-                  actions: [
-                    TextButton(
-                      child: Text('Cancelar'),
-                      onPressed: () => Navigator.of(context).pop(),
-                    ),
-                    TextButton(
-                      child: Text('Excluir'),
-                      onPressed: () {
-                        _eliminarDisciplina(key);
-                        Navigator.of(context).pop();
-                      },
-                    ),
-                  ],
+            if (isInterative)
+              IconButton(
+                icon: Icon(Icons.delete),
+                onPressed: () => showDialog(
+                  context: context,
+                  builder: (context) => AlertDialog(
+                    title: Text('Eliminar disciplina'),
+                    content:
+                        Text('Tem certeza que quer eliminar esta disciplina?'),
+                    actions: [
+                      TextButton(
+                        child: Text('Cancelar'),
+                        onPressed: () => Navigator.of(context).pop(),
+                      ),
+                      TextButton(
+                        child: Text('Excluir'),
+                        onPressed: () {
+                          _eliminarDisciplina(key);
+                          Navigator.of(context).pop();
+                        },
+                      ),
+                    ],
+                  ),
                 ),
               ),
-            ),
-            IconButton(
-              icon: Icon(Icons.edit),
-              onPressed: () => Navigator.push(
-                context,
-                MaterialPageRoute(
-                  builder: (context) => Registo(),
-                ),
+            if (isInterative)
+              IconButton(
+                icon: Icon(Icons.edit),
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => Registo(
+                        disciplina: key,
+                        tipoAvaliacao: avaliacao,
+                        dataHora: dataHora,
+                        dificuldade: dificuldade,
+                        observacoes: observacoes,
+                      ),
+                    ),
+                  ).then((_) => setState(() {}));
+                },
               ),
-            ),
+
           ],
         ),
         onTap: () {
@@ -141,7 +118,6 @@ class _ListaState extends State<Lista> {
       );
     }).toList();
 
-    //set sort list by dataHora
     // set sort list by dataHora
     disciplinas.sort((a, b) {
       final aChildren = (a.subtitle as Column)?.children;
@@ -159,6 +135,7 @@ class _ListaState extends State<Lista> {
 
     setState(() {
       _disciplinas_added = disciplinas;
+
     });
   }
 
@@ -176,37 +153,6 @@ class _ListaState extends State<Lista> {
         return AlertDialog(
           title: Text('O registo de avaliação selecionado foi eliminado '
               'com sucesso.'),
-          actions: <Widget>[
-            TextButton(
-              child: Text('OK'),
-              onPressed: () {
-                Navigator.of(context).pop();
-              },
-            ),
-          ],
-        );
-      },
-    );
-  }
-
-  int _disciplinasEditadas = 0; //
-
-  Future<void> _editarDisciplina(String key, String avaliacao, String dataHora,
-      String dificuldade, String observacoes) async {
-    final prefs = await SharedPreferences.getInstance();
-    final values = [avaliacao, dataHora, dificuldade, observacoes];
-    await prefs.setStringList(key, values);
-    setState(() {
-      _loadDisciplinas();
-    });
-    _disciplinasEditadas++;
-    print('Total de disciplinas editadas: $_disciplinasEliminadas');
-    showDialog(
-      context: context,
-      builder: (BuildContext context) {
-        return AlertDialog(
-          title: Text('O registo de avaliação selecionado foi editado'
-              ' com sucesso.'),
           actions: <Widget>[
             TextButton(
               child: Text('OK'),

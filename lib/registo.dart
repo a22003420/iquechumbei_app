@@ -4,6 +4,24 @@ import 'package:shared_preferences/shared_preferences.dart';
 import 'package:intl/intl.dart';
 
 class Registo extends StatefulWidget {
+
+  final String? disciplina;
+  final String? tipoAvaliacao;
+  final String? dataHora;
+  final String? dificuldade;
+  final String? observacoes;
+
+
+  const Registo({
+    Key? key,
+    this.disciplina,
+    this.tipoAvaliacao,
+    this.dataHora,
+    this.dificuldade,
+    this.observacoes,
+  }) : super(key: key);
+
+
   @override
   _RegistoState createState() => _RegistoState();
 }
@@ -18,13 +36,16 @@ class _RegistoState extends State<Registo> {
 
   List<Map<String, dynamic>> _registos = [];
 
+
   @override
   void initState() {
     super.initState();
-    _recuperarRegistos();
+
   }
 
-  Future<void> _guardarRegisto() async {
+  Future<void> _guardarRegisto(bool isNew) async {
+
+
     final preferences = await SharedPreferences.getInstance();
     final disciplina = _disciplinaController.text;
     final avaliacao = _avaliacaoController.text;
@@ -49,44 +70,38 @@ class _RegistoState extends State<Registo> {
     _observacoesController.clear();
     // Limpar os campos e mostrar a mensagem
 
-    ScaffoldMessenger.of(context).showSnackBar(
-      SnackBar(
-        content: Text('A avaliação foi registada com sucesso.'),
-      ),
-    );
+    if(isNew){
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(
+          content: Text('A avaliação foi registada com sucesso.'),
+        ),
+      );
+    }
+    else{
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(
+          content: Text('A avaliação foi editada com sucesso.'),
+        ),
+      );
+      await Future.delayed(Duration(seconds: 3));
+      Navigator.pop(context, true);
+    }
 
-    // Recuperar registos updated
-    _recuperarRegistos();
+
   }
 
-  Future<void> _recuperarRegistos() async {
-    final preferences = await SharedPreferences.getInstance();
-    final keys = preferences.getKeys();
-
-    final registos = keys.map((key) {
-      final value = preferences.get(key);
-      final values = value as List<dynamic>;
-      final avaliacao = values.length > 0 ? values[0] : '';
-      final dataHora = values.length > 1 ? values[1] : '';
-      final dificuldade = values.length > 2 ? values[2] : '';
-      final observacoes = values.length > 3 ? values[3] : '';
-
-      return Map<String, dynamic>.from({
-        'disciplina': key,
-        'avaliacao': avaliacao,
-        'dataHora': dataHora,
-        'dificuldade': dificuldade,
-        'observacoes': observacoes,
-      });
-    }).toList();
-
-    setState(() {
-      _registos = registos;
-    });
-  }
 
   @override
   Widget build(BuildContext context) {
+
+    _disciplinaController.text = widget.disciplina ?? '';
+    _avaliacaoController.text = widget.tipoAvaliacao ?? '';
+    _dataHoraController.text = widget.dataHora ?? '';
+    _dificuldadeController.text = widget.dificuldade ?? '';
+    _observacoesController.text = widget.observacoes ?? '';
+
+    final bool isNew = widget.disciplina == null;
+
     return Scaffold(
       body: SafeArea(
         child: Column(
@@ -263,7 +278,7 @@ class _RegistoState extends State<Registo> {
                       ),
                       SizedBox(height: 16),
                       ElevatedButton(
-                        onPressed: _guardarRegisto,
+                        onPressed: () => _guardarRegisto(isNew),
                         child: Text('Guardar o registo da avaliação'),
                         style: ElevatedButton.styleFrom(
                           backgroundColor: Colors.blue,

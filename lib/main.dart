@@ -9,11 +9,41 @@ bool _isFirstRun = true; //flag
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  final prefs = await SharedPreferences.getInstance();
 
   if (_isFirstRun == true) {
     // testa se é a primeira vez que a app é executado
-    // prefs.clear(); //to clear all the data
+    final preferences = await SharedPreferences.getInstance(); //memória
+
+       preferences.setStringList("IHM", [
+         "mini-teste",
+         "2023/02/02 18:30",
+         "3",
+         "Estudar para o mini-teste"
+       ]);
+
+    preferences.setStringList("Computação Móvel", [
+      "defesa",
+      "2023/03/03 18:30",
+      "4",
+      "Rever o código para a defesa"
+    ]);
+
+    preferences.setStringList("LP2", [
+      "frequencia",
+      "2023/05/10 12:30",
+      "4",
+      "Estudar para a frequencia, ver material de apoio"
+    ]);
+
+    preferences.setStringList("Cyber", [
+      "frequencia",
+      "2023/03/18 18:30",
+      "4",
+      "Estudar para a frequencia, ver material de apoio"
+    ]);
+
+
+    //preferences.clear(); //to clear all the data
     _isFirstRun = false;
     print("É a primeira vez que a app é corrida"); //flag
   } else {
