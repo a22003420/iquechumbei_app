@@ -13,16 +13,22 @@ Número: a22202497
 
 ## Screenshots dos ecrãs
 ### Dashboard (1): <br> <br> <img src="images/img.png" height="50%" width="50%"> 
-### Dashboard (2): <br> <br> <img src="images/img_8.png" height="50%" width="50%"> 
-### Dashboard (3): <br> <br><img src="images/img_10.png" height="50%" width="50%">
-### Dashboard (4): <br> <br><img src="images/img_001.png" height="50%" width="50%">
+### Dashboard (2): <br> <br> <img src="images/img.png" height="50%" width="50%">
+### Dashboard (3): <br> <br> <img src="images/img_8.png" height="50%" width="50%"> 
+### Dashboard (4): <br> <br><img src="images/img_10.png" height="50%" width="50%">
+### Dashboard (5): <br> <br><img src="images/img_001.png" height="50%" width="50%">
 ### Lista de Avaliações organizada por data/hora: <br> <br><img src="images/img_1.png" height="50%" width="50%"> 
 ### Lista de Detalhe: <br> <br><img src="images/img_4.png" height="50%" width="50%"> 
 ### Lista de Detalhe (Share/Dealer): <br> <br><img src="images/img_5.png" height="50%" width="50%"> 
 ### Lista de Avaliações (Eliminar): <br> <br><img src="images/img_6.png" height="50%" width="50%"> 
 ### Lista de Avaliações (Eliminado): <br> <br><img src="images/img_7.png" height="50%" width="50%"> 
-### Lista de Avaliações (Editar): <br> <br> missing
-### Lista de Avaliações (Editado): <br> <br> missing
+### Lista de Avaliações (Editar 1): <br> <br><img src="images/Editar01.png" height="50%" width="50%">
+### Lista de Avaliações (Editar 2): <br> <br><img src="images/Editar02.png" height="50%" width="50%">
+### Lista de Avaliações (Editar 3): <br> <br><img src="images/Editar03.png" height="50%" width="50%">
+### Lista de Avaliações (Editar 4): <br> <br><img src="images/Editar05.png" height="50%" width="50%">
+### Lista de Avaliações (Editado 1): <br> <br><img src="images/Editar04.png" height="50%" width="50%">
+### Lista de Avaliações (Editado 2): <br> <br><img src="images/Editar06.png" height="50%" width="50%">
+### Lista de Avaliações (Editado 3): <br> <br><img src="images/Editar07.png" height="50%" width="50%">
 ### Registo de Avaliação (1): <br> <br> <img src="images/img_2.png" height="50%" width="50%"> 
 ### Registo de Avaliação (2): <br> <br> <img src="images/img_3.png" height="50%" width="50%"> 
 
@@ -69,4 +75,4 @@ avaliação.
 
 
 ## Autoavaliação
-Nota: 14.5 valores
+Nota: 16 valores
