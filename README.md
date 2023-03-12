@@ -21,14 +21,17 @@ Número: a22202497
 ### Lista de Detalhe: <br> <br><img src="images/img_4.png" height="50%" width="50%"> 
 ### Lista de Detalhe (Share/Dealer): <br> <br><img src="images/img_5.png" height="50%" width="50%"> 
 ### Lista de Avaliações (Eliminar): <br> <br><img src="images/img_6.png" height="50%" width="50%"> 
-### Lista de Avaliações (Eliminado): <br> <br><img src="images/img_7.png" height="50%" width="50%"> 
+### Lista de Avaliações (Eliminado): <br> <br><img src="images/img_7.png" height="50%" width="50%">
+### Lista de Avaliações (Não pode ser eliminado): <br> <br><img src="images/Naopode.png" height="50%" width="50%">
+IHM e Computação Móvel não podem ser eliminados nem editados, pois a data é passada, pelo que os icones nem aparecem.
+### Lista de Avaliações (Não pode ser editado): <br> <br><img src="images/Naopode.png" height="50%" width="50%">
+IHM e Computação Móvel não podem ser eliminados nem editados, pois a data é passada, pelo que os icones nem aparecem.
 ### Lista de Avaliações (Editar 1): <br> <br><img src="images/Editar01.png" height="50%" width="50%">
-### Lista de Avaliações (Editar 2): <br> <br><img src="images/Editar02.png" height="50%" width="50%">
-### Lista de Avaliações (Editar 3): <br> <br><img src="images/Editar03.png" height="50%" width="50%">
+### Lista de Avaliações (Editar 2): <br> <br><img src="images/Edita02.png" height="50%" width="50%">
+### Lista de Avaliações (Editar 3): <br> <br><img src="images/Edita03.png" height="50%" width="50%">
 ### Lista de Avaliações (Editar 4): <br> <br><img src="images/Editar05.png" height="50%" width="50%">
-### Lista de Avaliações (Editado 1): <br> <br><img src="images/Editar04.png" height="50%" width="50%">
-### Lista de Avaliações (Editado 2): <br> <br><img src="images/Editar06.png" height="50%" width="50%">
-### Lista de Avaliações (Editado 3): <br> <br><img src="images/Editar07.png" height="50%" width="50%">
+### Lista de Avaliações (Editado 1): <br> <br><img src="images/Editar06.png" height="50%" width="50%">
+### Lista de Avaliações (Editado 2): <br> <br><img src="images/Editar07.png" height="50%" width="50%">
 ### Registo de Avaliação (1): <br> <br> <img src="images/img_2.png" height="50%" width="50%"> 
 ### Registo de Avaliação (2): <br> <br> <img src="images/img_3.png" height="50%" width="50%"> 
 
