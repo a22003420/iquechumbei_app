@@ -17,8 +17,7 @@ Número: a22202497
 ### Dashboard (3): <br> <br> <img src="images/img_8.png" height="50%" width="50%"> 
 ### Dashboard (4): <br> <br><img src="images/img_10.png" height="50%" width="50%">
 ### Dashboard (5): <br> <br><img src="images/img_001.png" height="50%" width="50%">
-### Lista de Avaliações organizada por data/hora (1): <br> <br><img src="images/img_1.png" height="50%" width="50%"> 
-### Lista de Avaliações organizada por data/hora (2): <br> <br><img src="images/last.png" height="50%" width="50%">
+### Lista de Avaliações organizada por data/hora: <br> <br><img src="images/last.png" height="50%" width="50%">
 ### Lista de Detalhe: <br> <br><img src="images/img_4.png" height="50%" width="50%"> 
 ### Lista de Detalhe (Share/Dealer): <br> <br><img src="images/img_5.png" height="50%" width="50%"> 
 ### Lista de Avaliações (Eliminar): <br> <br><img src="images/img_6.png" height="50%" width="50%"> 
