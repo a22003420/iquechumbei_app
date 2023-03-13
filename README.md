@@ -78,6 +78,6 @@ Assim, esta funcionalidade foi implementada no ecrã de detalhe com recurso ao b
 avaliação.
 
 ## Autoavaliação
-Nota: 16 valores#   m i n i - p r o j e t o - a 2 2 2 0 2 4 9 7 
+Nota: 16 valores
  
  
