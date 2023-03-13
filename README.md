@@ -65,8 +65,8 @@ laranja, ambos com a data e a hora da avaliação (achei pretinente na ótica do
 <img src="images/img_12.png" height="50%" width="50%"> <br>
 <img src="images/img0002.png" height="50%" width="50%"> <br>
 <img src="images/dealer.png" height="50%" width="50%"> <br>
-(Neste print é mostrado o texto numa mensagem de texto pronta a enviar)
-![img.png](img.png)
+(Neste último print é mostrado o texto numa mensagem de texto pronta a enviar)
+
 
 A função dealer foi implementada com a função Share.share() mostrada em cima. 
 Usei a biblioteca 'share' do flutter que permite partilhar o texto, passando-lhe a 
