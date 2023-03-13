@@ -38,6 +38,7 @@ IHM e Computação Móvel não podem ser eliminados nem editados, pois a data é
 ### Registo de Avaliação (2): <br> <br> <img src="images/img_3.png" height="50%" width="50%">
 
 
+
 ## Funcionalidades
 
 <img src="images/img_9.png" height="50%" width="50%"> <br>
