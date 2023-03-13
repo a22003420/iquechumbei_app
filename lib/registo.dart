@@ -4,13 +4,11 @@ import 'package:shared_preferences/shared_preferences.dart';
 import 'package:intl/intl.dart';
 
 class Registo extends StatefulWidget {
-
   final String? disciplina;
   final String? tipoAvaliacao;
   final String? dataHora;
   final String? dificuldade;
   final String? observacoes;
-
 
   const Registo({
     Key? key,
@@ -20,7 +18,6 @@ class Registo extends StatefulWidget {
     this.dificuldade,
     this.observacoes,
   }) : super(key: key);
-
 
   @override
   _RegistoState createState() => _RegistoState();
@@ -36,16 +33,12 @@ class _RegistoState extends State<Registo> {
 
   List<Map<String, dynamic>> _registos = [];
 
-
   @override
   void initState() {
     super.initState();
-
   }
 
   Future<void> _guardarRegisto(bool isNew) async {
-
-
     final preferences = await SharedPreferences.getInstance();
     final disciplina = _disciplinaController.text;
     final avaliacao = _avaliacaoController.text;
@@ -70,14 +63,13 @@ class _RegistoState extends State<Registo> {
     _observacoesController.clear();
     // Limpar os campos e mostrar a mensagem
 
-    if(isNew){
+    if (isNew) {
       ScaffoldMessenger.of(context).showSnackBar(
         SnackBar(
           content: Text('A avaliação foi registada com sucesso.'),
         ),
       );
-    }
-    else{
+    } else {
       ScaffoldMessenger.of(context).showSnackBar(
         SnackBar(
           content: Text('A avaliação foi editada com sucesso.'),
@@ -86,14 +78,10 @@ class _RegistoState extends State<Registo> {
       await Future.delayed(Duration(seconds: 3));
       Navigator.pop(context, true);
     }
-
-
   }
-
 
   @override
   Widget build(BuildContext context) {
-
     _disciplinaController.text = widget.disciplina ?? '';
     _avaliacaoController.text = widget.tipoAvaliacao ?? '';
     _dataHoraController.text = widget.dataHora ?? '';

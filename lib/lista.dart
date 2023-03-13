@@ -1,6 +1,5 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_slidable/flutter_slidable.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'listadetalhes.dart';
 import 'registo.dart';
@@ -99,7 +98,6 @@ class _ListaState extends State<Lista> {
                   ).then((_) => setState(() {}));
                 },
               ),
-
           ],
         ),
         onTap: () {
@@ -135,7 +133,6 @@ class _ListaState extends State<Lista> {
 
     setState(() {
       _disciplinas_added = disciplinas;
-
     });
   }
 
