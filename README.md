@@ -49,15 +49,16 @@ através de um formulário no ecrã de registo em que é pedido ao utilizador:
     3. Data e hora da avaliação
     4. Nível de dificuldade esperado para essa avaliação
     5. Observações como campo opcional
-3. Edição de uma avaliação com uma mensagem de avaliação editada com sucesso.
-4. Eliminação de uma avaliação com verficação de confirmação por parte do utilizador.
-5. Consulta do detalhe de uma avaliação em que temos a informação da avaliação, bem como a 
+2. Edição de uma avaliação com uma mensagem de avaliação editada com sucesso com reencaminhamento 
+automático para a página Lista de Avaliações, tendo colocado um delay de 3 segundos (tempo de ler a mensagem).
+3. Eliminação de uma avaliação com verficação de confirmação por parte do utilizador.
+4. Consulta do detalhe de uma avaliação em que temos a informação da avaliação, bem como a 
 possibiliade de partilhar a mesma através da funcionalidade implementada Dealer.
-6. Fiz um dashboard em que aparece o cálculo da média da dificuldade das avaliações para os próximos
+5. Fiz um dashboard em que aparece o cálculo da média da dificuldade das avaliações para os próximos
 7 dias, bem como entre os 7 e os 14 dias, assim como a lista das próximas avaliações num
 período de 7 dias, identifcando o próprio dia/ dia seguinte a vermelho, e os restantes dias a 
 laranja, ambos com a data e a hora da avaliação (achei pretinente na ótica do User Experience).
-7. Por fim, foram feitos testes unitários.
+6. Por fim, foram feitos testes unitários.
 
 ## Dealer
 
